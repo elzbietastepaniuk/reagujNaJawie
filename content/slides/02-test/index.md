@@ -1,6 +1,6 @@
 ---
-title: My Second Post!
-id: "4"
+title: Drugi slajd
+id: "2"
 ---
 
 Wow! I love blogging so much already.

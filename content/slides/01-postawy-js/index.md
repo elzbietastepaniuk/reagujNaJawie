@@ -1,6 +1,6 @@
 ---
 title: Podstawy JavaScript
-id: "2"
+id: "1"
 description: "Podstawy JS"
 ---
 

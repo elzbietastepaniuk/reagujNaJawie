@@ -7,8 +7,8 @@ const GlossaryIndex = ({ terms }) => {
       <h2>Glossary Index</h2>
       <ol style={{ listStyle: `none` }}>
         {terms.map(term => (
-          <Link to={term.fields.slug}>
-            <li key={term.id}>
+          <Link to={term.fields.slug} key={term.id}>
+            <li>
               <h3>{term.frontmatter.title}</h3>
               <p>{term.frontmatter.description}</p>
             </li>
