@@ -6,7 +6,7 @@ const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
 
   const isRootPath = location.pathname === rootPath
-  const isInGlossary = location.pathname.includes("/glossary/")
+  const isInGlossary = location.pathname === "/glossary/"
   let header
 
   if (isRootPath) {
