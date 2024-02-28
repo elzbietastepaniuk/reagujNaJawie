@@ -1,12 +1,30 @@
 import { Link } from 'gatsby'
-import React from 'react'
+import React, { useState } from 'react'
 
 const GlossaryIndex = ({ terms }) => {
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value)
+  }
+
+  const filteredTerms = terms.filter((term) =>
+    term.frontmatter.title.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+
   return (
     <div className="glossary">
-      <h2>Glossary Index</h2>
+      <h2>Słowniczek</h2>
+      <div class="input-group">
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={handleSearchChange}
+          placeholder="Wyszukaj"
+        />
+      </div>
       <ol style={{ listStyle: `none` }} className="glossary-list">
-        {terms.map((term) => (
+        {filteredTerms.map((term) => (
           <li key={term.id}>
             <Link to={term.fields.slug}>
               <h3>{term.frontmatter.title}</h3>

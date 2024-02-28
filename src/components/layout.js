@@ -25,7 +25,7 @@ const Layout = ({ location, title, children }) => {
             />
           </Link>
         </h1>
-        <Link to="/glossary">
+        <Link to="/glossary" title="Słowniczek">
           {" "}
           <StaticImage
             src="../images/glossary.png"

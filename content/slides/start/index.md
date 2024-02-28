@@ -18,7 +18,7 @@ Naszym zadaniem będzie ożywić go dodając kod JavaScript.
 
 ## Instalacja projektu
 
-- otwórz projekt w programie VSC i otwórz terminal (na górnym menu na opcja "Terminal" lub `Ctrl + Shift + ù` / `Cmd + Shift + ``\`)
+- otwórz projekt w programie VSC i otwórz terminal (na górnym menu na opcja "Terminal" lub `Ctrl + Shift + ù` / `Cmd + Shift + ù`)
 - w terminalu wpisz polecenie `npm install` a następnie `npm install -g json-server`
 - odpal serwer za pomocą polecania `json-server --watch src/data/db.json --port 3001`
 - odpal projekt za pomoca polecania `npm run start`
