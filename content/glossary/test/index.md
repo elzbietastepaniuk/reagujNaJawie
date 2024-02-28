@@ -2,7 +2,6 @@
 title: "Test"
 description: "Opis pojęcia 1 w słowniku"
 id: "1"
-slug: "test"
 ---
 
 ## Pojęcie 1

@@ -18,6 +18,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         fields {
           slug
         }
+        frontmatter {
+          id
+        }
       }
     }
   }
@@ -31,11 +34,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const glossary = glossaryResult.data.allMarkdownRemark.nodes
+  const sortedGlossary = glossaryResult.data.allMarkdownRemark.nodes
+  .map(node => ({
+    ...node,
+    frontmatter: {
+      ...node.frontmatter,
+      id: parseInt(node.frontmatter.id) // Konwersja na liczbę
+    }
+  }))
+  .sort((a, b) => a.frontmatter.id - b.frontmatter.id);
+
   // Create a page for each glossary term
 
-  if (glossary.length > 0) {
-    glossary.forEach(term => {
+  if (sortedGlossary.length > 0) {
+    sortedGlossary.forEach(term => {
       createPage({
         path: term.fields.slug,
         component: glossaryTerm,
@@ -64,6 +76,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           fields {
             slug
           }
+          frontmatter {
+            id
+          }
         }
       }
     }
@@ -77,18 +92,29 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const slides = slidesResult.data.allMarkdownRemark.nodes
+ 
 
-  if (slides.length > 0) {
-    slides.forEach((post, index) => {
-      const previousSlideId = index === 0 ? null : slides[index - 1].id
-      const nextSlideId = index === slides.length - 1 ? null : slides[index + 1].id
+  const sortedSlides = slidesResult.data.allMarkdownRemark.nodes
+  .map(node => ({
+    ...node,
+    frontmatter: {
+      ...node.frontmatter,
+      id: parseInt(node.frontmatter.id) // Konwersja na liczbę
+    }
+  }))
+  .sort((a, b) => a.frontmatter.id - b.frontmatter.id);
+
+
+  if (sortedSlides.length > 0) {
+    sortedSlides.forEach((item, index) => {
+      const previousSlideId = index === 0 ? null : sortedSlides[index - 1].id
+      const nextSlideId = index === sortedSlides.length - 1 ? null : sortedSlides[index + 1].id
 
       createPage({
-        path: post.fields.slug,
+        path: item.fields.slug,
         component: slide,
         context: {
-          id: post.id,
+          id: item.id,
           previousPostId: previousSlideId,
           nextPostId: nextSlideId,
         },
@@ -96,6 +122,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   }
 }
+//   if (sortedSlides.length > 0) {
+//     sortedSlides.forEach((slide, index) => {
+//       const previousSlideId = index === 0 ? null : sortedSlides[index - 1].id
+//       const nextSlideId = index === sortedSlides.length - 1 ? null : sortedSlides[index + 1].id
+
+//       createPage({
+//         path: slide.fields.slug,
+//         component: slide,
+//         context: {
+//           id: slide.id,
+//           previousPostId: previousSlideId,
+//           nextPostId: nextSlideId,
+//         },
+//       })
+//     })
+//   }
+// }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions

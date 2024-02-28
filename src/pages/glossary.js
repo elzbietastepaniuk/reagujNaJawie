@@ -10,12 +10,15 @@ const GlossaryPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const terms = data.allMarkdownRemark.nodes
 
-  console.log(data)
-  console.log(terms)
+  const sortedTerms = terms.sort((a, b) => {
+    const idA = parseInt(a.frontmatter.id);
+    const idB = parseInt(b.frontmatter.id);
+    return idA - idB;
+  });
 
   return (
     <Layout location={location} title={siteTitle}>
-      <GlossaryIndex terms={terms} />
+      <GlossaryIndex terms={sortedTerms} />
     </Layout>
   )
 }

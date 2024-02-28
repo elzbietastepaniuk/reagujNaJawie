@@ -2,7 +2,6 @@
 title: "Term2"
 description: "Opis pojęcia 1 w słowniku"
 id: "2"
-slug: "term2"
 ---
 
 ## Pojęcie 1
