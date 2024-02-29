@@ -86,6 +86,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: auto;
 }
 
 hr {
@@ -258,6 +259,12 @@ a:focus {
   display: flex;
   justify-content: space-between;
 }
+
+.global-wrapper.global-wrapper--flex {
+  display: flex;
+  flex-direction: column;
+}
+
 .global-header .global-wrapper[data-is-root-path='false'] {
   padding: var(--spacing-5);
 }
@@ -340,7 +347,8 @@ a:focus {
 }
 
 .button {
-  margin-bottom: 50px;
+  margin-bottom: var(--spacing-22);
+  margin-top: var(--spacing-12);
   text-decoration: none;
   position: relative;
   font-family: var(--font-heading);
