@@ -1,5 +1,5 @@
 ---
-title: 'Document'
+title: 'document'
 description: 'obiekt document'
 id: '1'
 ---

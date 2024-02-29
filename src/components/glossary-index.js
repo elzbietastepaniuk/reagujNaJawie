@@ -12,10 +12,12 @@ const GlossaryIndex = ({ terms }) => {
     term.frontmatter.title.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
+  console.log(filteredTerms)
+
   return (
     <div className="glossary">
       <h2>Słowniczek</h2>
-      <div class="input-group">
+      <div className="input-group">
         <input
           type="text"
           value={searchTerm}
