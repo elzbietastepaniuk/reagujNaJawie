@@ -31,7 +31,7 @@ const Layout = ({ location, title, children }) => {
             src="../images/glossary.png"
             width={64}
             quality={64}
-            layout="fixed"
+            layout="constrained"
             formats={["auto", "webp"]}
             alt=""
           />
@@ -57,7 +57,7 @@ const Layout = ({ location, title, children }) => {
               src="../images/glossary.png"
               width={54}
               quality={54}
-              layout="fixed"
+              layout="constrained"
               formats={["auto", "webp"]}
               alt=""
             />

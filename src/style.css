@@ -254,12 +254,12 @@ a:focus {
 }
 
 .global-header .global-wrapper {
-  padding: var(--spacing-10) 0;
+  padding: var(--spacing-10) var(--spacing-5);
   display: flex;
   justify-content: space-between;
 }
 .global-header .global-wrapper[data-is-root-path='false'] {
-  padding: var(--spacing-3) 0;
+  padding: var(--spacing-5);
 }
 
 .global-header {
@@ -393,7 +393,7 @@ a:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: var(--spacing-10);
+  margin-bottom: var(--spacing-16);
 }
 
 .input-group input[type="text"] {
@@ -428,8 +428,8 @@ a:focus {
 .glossary-list {
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
-  justify-content: space-between;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: space-evenly;
   column-gap: var(--spacing-3);
 
 }
