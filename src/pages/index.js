@@ -27,8 +27,8 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <div className="home-page">
-        <h1>Cześć</h1>
-        <p>Zaczynamy...</p>
+        <h1>Cześć :)</h1>
+        <p style={{textAlign: "center"}}>Fajnie, że jesteś!<br />Pomożemy Ci zacząć przygodę z programowaniem.<br />Przygotuj się na zdobycie nowych praktycznych umiejętności...</p>
         {slides.length > 0 && (
           <Link to={slides[0].fields.slug} itemProp="url" className="button">
             <div className="button__bg">
