@@ -306,7 +306,7 @@ a:focus {
 }
 
 .slide header h1 {
-  margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-6) var(--spacing-0);
 }
 
 .slide header p {
@@ -347,7 +347,7 @@ a:focus {
 }
 
 .button {
-  margin: var(--spacing-12) 0;  
+  margin: var(--spacing-2) 0 var(--spacing-10);  
   text-decoration: none;
   position: relative;
   font-family: var(--font-heading);
