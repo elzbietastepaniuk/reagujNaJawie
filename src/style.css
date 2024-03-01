@@ -445,3 +445,7 @@ a:focus {
   color: var(--color-primary);
   margin: 0;
 }
+
+.glossary-term {
+  h1 { margin-top: 0}
+}
