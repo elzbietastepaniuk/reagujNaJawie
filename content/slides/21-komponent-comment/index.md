@@ -1,7 +1,8 @@
 ---
 title: Komponent `Comment.js`
-id: "20"
+id: "21"
 ---
+
 
 Komponent `Comment` renderuje pojedynczy komentarz.
 

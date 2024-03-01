@@ -1,25 +1,19 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
+import * as React from 'react'
+import { Link, graphql } from 'gatsby'
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from '../components/layout'
+import Seo from '../components/seo'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
-  
-  const slides = posts.filter(post => !post.fields.slug.includes("glossary"))
-  console.log(slides)
+  const slides = posts.filter((post) => !post.fields.slug.includes('glossary'))
 
   if (slides.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
+        <p>Niestety mam bład, zajrzyj tu za chwilę</p>
       </Layout>
     )
   }
@@ -28,7 +22,13 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <div className="home-page">
         <h1>Cześć :)</h1>
-        <p style={{textAlign: "center"}}>Fajnie, że jesteś!<br />Pomożemy Ci zacząć przygodę z programowaniem.<br />Przygotuj się na zdobycie nowych praktycznych umiejętności...</p>
+        <p style={{ textAlign: 'center' }}>
+          Fajnie, że jesteś!
+          <br />
+          Pomożemy Ci stawiać pierwsze kroki w świecie programowania.
+          <br /> <br />
+          Pobierz <a href='/photogram.zip'>projekt startowy</a> i zaczynamy...
+        </p>
         {slides.length > 0 && (
           <Link to={slides[0].fields.slug} itemProp="url" className="button">
             <div className="button__bg">
@@ -60,7 +60,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: {frontmatter: {id: ASC}}) {
+    allMarkdownRemark(sort: { frontmatter: { id: ASC } }) {
       nodes {
         excerpt
         fields {
