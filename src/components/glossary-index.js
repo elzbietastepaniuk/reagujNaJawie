@@ -8,8 +8,12 @@ const GlossaryIndex = ({ terms }) => {
     setSearchTerm(event.target.value)
   }
 
-  const filteredTerms = terms.filter((term) =>
-    term.frontmatter.title.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredTerms = terms.filter(
+    (term) =>
+      term.frontmatter.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      term.frontmatter.description
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase())
   )
 
   console.log(filteredTerms)
