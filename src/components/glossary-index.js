@@ -16,8 +16,6 @@ const GlossaryIndex = ({ terms }) => {
         .includes(searchTerm.toLowerCase())
   )
 
-  console.log(filteredTerms)
-
   return (
     <div className="glossary">
       <h2>Słowniczek</h2>

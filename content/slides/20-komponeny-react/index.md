@@ -5,7 +5,7 @@ id: "20"
 
 Spróbujmy przyjrzeć się projektowi naszej sekcji z komentarzami. 
 
-![Podział na komponenty](./komponenty.png)
+![Podział na komponenty](./komponenty-react.png)
 
 Z tej ilustracji wynika, że potrzebujemy czterech komponentów Rect. 
 ```js

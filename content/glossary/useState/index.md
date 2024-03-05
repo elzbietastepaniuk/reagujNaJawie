@@ -4,9 +4,9 @@ description: "hook w React"
 id: "19"
 ---
 
-`useState` to narzędzie, które pomaga komponentom React przechowywać i aktualizować informacje (stan elementu). Jest jak pudełko, w którym można przechowywać różne wartości, na przykład liczby, tekst czy obiekty.
+`useState` to narzędzie (hook - specjalna funkcja, która pozwala „zahaczyć się” w wewnętrzne mechanizmy Reacta), które pomaga komponentom React przechowywać i aktualizować informacje o stanie elementu.
 
-Funkcja `useState` tworzy to pudełko:
+Hook `useState` wygląda następująco:
 
 ```js
 import React, {useState} from 'react';
@@ -14,14 +14,12 @@ import React, {useState} from 'react';
 const [count, setCount] = useState(0);
 ```
 
-Kiedy używamy hooka `useState` w React, dostajemy parę: **zmienną**, która przechowuje aktualną wartość stanu (czyli `count` w tym przypadku) oraz **funkcję**, którą możemy użyć do zmiany tej wartości stanu (czyli `setCount`).\
-Te nazwy (`count` i `setCount`) są po prostu tymi, które sami wybieramy, aby odwoływać się do aktualnej wartości stanu oraz do funkcji zmieniającej tę wartość.\
+Kiedy używamy hooka `useState` w React, dostajemy parę: 
+
+- **zmienną** - `count`, która przechowuje aktualną wartość stanu. Jest jak pudełko, w którym można przechowywać różne wartości, na przykład liczby, tekst czy obiekty.
+- **funkcję** - `setCount`, którą możemy użyć do zmiany tej wartości stanu.
+Nazwy (`count` i `setCount`) wybieramy sami, aby odwoływać się do aktualnej wartości stanu oraz do funkcji zmieniającej tę wartość.\
 Jest to podobne do nadawania nazw zmiennym w zwykłym programowaniu, tak aby było łatwiej zrozumieć, co one robią.
-
-W naszym przykładzie:
-
-- `count` jest to zmienna przechowująca aktualną wartość stanu licznika.
-- `setCount` jest to funkcja, którą używamy do aktualizacji wartości stanu licznika.
 
 
 #### Stan początkowy
@@ -69,3 +67,26 @@ export default Counter;
 ```
 
 
+
+Przykład obiektu:
+
+```js
+const [user, setUser] = useState({name: 'Ann', age: 23});
+console.log(user.name, user.age) // Wynik: Ann, 23
+
+// Aktualizacja jednej wartości
+setUser(prevUser => {
+  return {
+    name: prevUser.name,
+    age: 30
+  };
+});
+console.log(user.name, user.age) // Wynik: Ann, 30
+
+// Aktualizacja obu wartości
+setUser({ name: 'Kate', age: 25 });
+console.log(user.name, user.age) // Wynik: Kate, 25
+```
+
+Po wykonaniu aktualizacji jednej wartości, jeśli pierwotny stan user to `{ name: 'Ann', age: 23 }`, to po wywołaniu `setUser` po raz pierwszy stan użytkownika zostanie zaktualizowany na `{ name: 'Ann', age: 30 }`. Więc po wykonaniu `console.log(user.name, user.age)` wynik będzie: `Ann, 30`.
+W drugim przypadku nazwa użytkownika zostanie zmieniona na `Kate`, a wiek na `25`.
