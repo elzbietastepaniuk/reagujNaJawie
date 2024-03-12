@@ -46,9 +46,9 @@ const commentsElements = comments.map((comment) => (
   </li>
 ))
 
-console.log(commentsElements)
+console.log(commentsElements)[
   // Konsola zwróci nam wynik nowej tablicy
-  [(
+  ((
     <li className="comment" id="1">
       <img className="avatar" src="/images/avatars/av2.jpg" alt="johnny2000" />
       <div className="comment-content">
@@ -78,8 +78,8 @@ console.log(commentsElements)
         <p>Reagujmy dalej :)</p>
       </div>
     </li>
-  )]
-
+  ))
+]
 ```
 
 Cała tablica `commentsElements` reprezentuje listę komentarzy gotowych do wyrenderowania w interfejsie użytkownika.
@@ -92,17 +92,17 @@ Stwórzmy również nasz nowy komponent `CommentList`
 import React from 'react'
 import Comment from './components/Comment'
 
-const commentsElements = comments.map((comment) => (
-  <Comment
-    key={comment.id}
-    id={comment.id}
-    avatar={comment.avatar}
-    nickname={comment.nickname}
-    content={comment.content}
-  />
-))
-
 const CommentList = () => {
+  const commentsElements = comments.map((comment) => (
+    <Comment
+      key={comment.id}
+      id={comment.id}
+      avatar={comment.avatar}
+      nickname={comment.nickname}
+      content={comment.content}
+    />
+  ))
+
   return (
     <div>
       <ul>{commentsElements}</ul>
@@ -113,8 +113,8 @@ const CommentList = () => {
 export default App
 ```
 
->Pamiętaj:
->Zauważ, że używamy `key={comment.id}` dla każdego elementu Comment, aby React mógł efektywnie zarządzać tymi elementami podczas aktualizacji interfejsu użytkownika. Wartość `key` powinna być unikatowa dla każdego elementu w kolekcji.
+> Pamiętaj:
+> Zauważ, że używamy `key={comment.id}` dla każdego elementu Comment, aby React mógł efektywnie zarządzać tymi elementami podczas aktualizacji interfejsu użytkownika. Wartość `key` powinna być unikatowa dla każdego elementu w kolekcji.
 
 Dodajmy także nasz obiekt z komentarzami i uzyjmy drugiego sposobu zapisu, a jedyną różnicą jest umieszczenie mapowania tablicy `comments` bezpośrednio w komponencie zamiast na zewnątrz:
 
@@ -123,27 +123,26 @@ import React from 'react'
 import Comment from './components/Comment'
 
 const CommentList = () => {
-
   const comments = [
-  {
-    id: '1',
-    avatarSrc: '/images/avatars/av2.jpg',
-    nickname: 'johnny2000',
-    content: 'Bardzo ciekawy artykuł!'
-  },
-  {
-    id: '2',
-    avatarSrc: '/images/avatars/av1.jpg',
-    nickname: 'harmony123',
-    content: 'Fajnie, lećmy dalej'
-  },
-  {
-    id: '3',
-    avatarSrc: '/images/avatars/av3.jpg',
-    nickname: 'alina_malina',
-    content: 'Reagujmy dalej :)'
-  }
-]
+    {
+      id: '1',
+      avatarSrc: '/images/avatars/av2.jpg',
+      nickname: 'johnny2000',
+      content: 'Bardzo ciekawy artykuł!'
+    },
+    {
+      id: '2',
+      avatarSrc: '/images/avatars/av1.jpg',
+      nickname: 'harmony123',
+      content: 'Fajnie, lećmy dalej'
+    },
+    {
+      id: '3',
+      avatarSrc: '/images/avatars/av3.jpg',
+      nickname: 'alina_malina',
+      content: 'Reagujmy dalej :)'
+    }
+  ]
 
   return (
     <div>
@@ -164,4 +163,3 @@ const CommentList = () => {
 
 export default App
 ```
-

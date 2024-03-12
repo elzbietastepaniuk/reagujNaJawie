@@ -258,6 +258,7 @@ a:focus {
   padding: var(--spacing-10) var(--spacing-5);
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .global-wrapper.global-wrapper--flex {
@@ -347,7 +348,7 @@ a:focus {
 }
 
 .button {
-  margin: var(--spacing-2) 0 var(--spacing-10);  
+  margin: var(--spacing-2) 0 var(--spacing-10);
   text-decoration: none;
   position: relative;
   font-family: var(--font-heading);
@@ -403,7 +404,7 @@ a:focus {
   margin-bottom: var(--spacing-16);
 }
 
-.input-group input[type="text"] {
+.input-group input[type='text'] {
   color: #353535;
   font-size: var(--fontSize-3);
   line-height: 1;
@@ -413,7 +414,8 @@ a:focus {
   max-width: 400px;
   padding: 0.8em 1em;
   border: 0.25em solid transparent;
-  background-image: linear-gradient(#fff, #fff), linear-gradient(120deg, #cf35a8 0%, #603b96 50%, #1f8cdf 100%);
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(120deg, #cf35a8 0%, #603b96 50%, #1f8cdf 100%);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   border-radius: 1.8em;
@@ -438,7 +440,10 @@ a:focus {
   grid-template-columns: repeat(auto-fill, 300px);
   justify-content: space-evenly;
   column-gap: var(--spacing-3);
+}
 
+.glossary-list--vertical {
+  grid-template-columns: 1fr;
 }
 
 .glossary-list li a h3 {
@@ -446,6 +451,13 @@ a:focus {
   margin: 0;
 }
 
-.glossary-term {
-  h1 { margin-top: 0}
+.glossary-term h1 {
+  margin-top: 0;
+}
+
+.contents-link {
+  margin-left: auto;
+  margin-bottom: var(--spacing-5);
+  display: block;
+  width: fit-content;
 }

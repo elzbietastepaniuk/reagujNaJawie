@@ -33,7 +33,7 @@ import React from 'react';
 
 *Importowanie biblioteki React jest konieczne w każdym pliku, który zawiera komponenty React. Biblioteka React dostarcza narzędzi i funkcji potrzebnych do definiowania komponentów, obsługi stanu, renderowania interfejsu użytkownika itp.*
 
-3. Następnie zdefiniuj komponent `Comment`, który będzie przyjmował dane komentarza jako `props` oraz zwracał kod HTML reprezentujący pojedynczy komentarz:
+3. Następnie zdefiniujmy komponent `Comment`, który będzie przyjmował dane komentarza jako `props` oraz zwracał kod HTML reprezentujący pojedynczy komentarz:
 
 ```js
 const Comment = ({ id, avatarSrc, nickname, content }) => {
@@ -53,6 +53,7 @@ export default Comment;
 
 W powyższym kodzie, `Comment` jest funkcją komponentu, która przyjmuje cztery argumenty: `id`, `avatarSrc`, `nickname`, `content`. Następnie zwraca element listy (`<li>`) reprezentujący pojedynczy komentarz. Każdy komentarz zawiera zdjęcie awatara (`<img>`), nazwę użytkownika (`<p>` z klasą `nickname`) oraz treść komentarza (`<p>`).
 
+Zauważ, że return nasz kod `html` zmieszamy w bloku `return (`. To oznacza, że zaczynamy zwracać (czyli renderować) fragment kodu `JSX`, który będzie stanowił część naszego interfejsu.
 
 
 >**Pamiętaj**
