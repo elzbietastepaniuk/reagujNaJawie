@@ -23,7 +23,7 @@ const GlossaryPage = ({ data, location }) => {
   )
 }
 
-export const Head = () => <Seo title="Glossary" />
+export const Head = () => <Seo title="Słowniczek" />
 
 export const query = graphql`
   query {

@@ -124,11 +124,12 @@ Jeśli nie ma błędu (czyli `error` jest pustym stringiem), renderujemy kompone
 ### Modyfikacja komponentu ` <CommentList />`
 
 Dotychczas w komponencie `<CommentList />` mielismy zdeklarowaną tablicę `comments` zawierającą obiekty z komentarzami.\
-Teraz możemy wykorzystać pobrane z serwera i przypisane do stanu `comments` w komponencie `CommentSection.js` komentarze i przekazać je do komponenta `<CommentList />` przez propsy: ` <CommentList comments={comments} /> `.
+Teraz możemy wykorzystać komentarze pobrane z serwera i przypisane do stanu `comments` w komponencie `CommentSection.js` i przekazać je do komponenta `<CommentList />` przez `props`:\
+` <CommentList comments={comments} /> `.
 
 Zmodyfikujmy teraz komponent `<CommentList />`:
 1. Usuńmy stałą `comments`: `const comments = [...]`
-2. przekażmy propsy: `const CommentList = ({ comments }) => {`
+2. przekażmy `props`: `const CommentList = ({ comments }) => {`
 
 ## Podsumowanie
 Podsumowując nasz komponent `CommentSection.js`  powinien wyglądać tak: 
