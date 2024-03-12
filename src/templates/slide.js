@@ -1,22 +1,26 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
+import * as React from 'react'
+import { Link, graphql } from 'gatsby'
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from '../components/layout'
+import Seo from '../components/seo'
 
 const SlideTemplate = ({
   data: { previous, next, site, markdownRemark: post },
-  location,
+  location
 }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
 
   return (
     <Layout location={location} title={siteTitle}>
-      <article
-        className="slide"
-        itemScope
-        itemType="http://schema.org/Article"
+      <Link
+        to="/contents"
+        title="Spis treści"
+        target="_blank"
+        className="contents-link"
       >
+        Spis treści
+      </Link>
+      <article className="slide" itemScope itemType="http://schema.org/Article">
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
         </header>
@@ -34,7 +38,7 @@ const SlideTemplate = ({
             flexWrap: `wrap`,
             justifyContent: `space-between`,
             listStyle: `none`,
-            padding: 0,
+            padding: 0
           }}
         >
           <li>
@@ -70,10 +74,10 @@ export default SlideTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
-    $id: String! 
+    $id: String!
     $previousPostId: String
     $nextPostId: String
-    ) {
+  ) {
     site {
       siteMetadata {
         title
@@ -106,5 +110,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
-
+`
