@@ -11,9 +11,9 @@ Metoda `addEventListener` przyjmuje dwa <a href="/glossary/argument" target="_bl
 Na przykład, jeśli chcemy wykonać pewne działanie po kliknięciu na przycisk, możemy użyć `addEventListener` w ten sposób:
 
 ```js
-const button = document.querySelector('#myButton');
+const button = document.querySelector("#myButton");
 
-button.addEventListener('click', function() {
-  console.log('Przycisk został kliknięty!');
+button.addEventListener("click", function () {
+  console.log("Przycisk został kliknięty!");
 });
 ```

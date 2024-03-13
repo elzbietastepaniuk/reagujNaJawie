@@ -1,11 +1,11 @@
 ---
 title: Komponent `CommentSection.js`
-id: '23'
+id: "23"
 ---
 
-Przy tworzeniu komponentu z listą komentarzy użyliśmy zahardkodowanej tablicy z komentarzami. Ale nie jest prawidłowe podejście, ponieważ chcemy mieć zawsze aktualną listę komentarzy.\
+Przy tworzeniu komponentu z listą komentarzy użyliśmy zahardkodowanej tablicy z komentarzami. Ale nie jest to prawidłowe podejście, ponieważ chcemy mieć zawsze aktualną listę komentarzy.\
 Będzie ona zapisywana na serwerze i przy renderowaniu aplikacji oraz wysyłaniu nowego komentarza pobierana.\
-Funkcje komunikacji z serwerem będzie pełnił komponent `CommentSection.js` będący także kontenerem dla wszystkich naszych komponentów.
+Funkcje komunikacji z serwerem będzie pełnił komponent `CommentSection.js`, będący także kontenerem dla wszystkich naszych komponentów.
 
 ## Inicjalizacja serwera JSON
 
@@ -28,77 +28,80 @@ Ponieważ czasem podczas komunikacji z serwerem może pojawić sie błąd także
 const CommentSection = () => {
   // Stan komponentu:
   // comments - aktualna lista komentarzy,
-  const [comments, setComments] = useState([])
+  const [comments, setComments] = useState([]);
   // error - ewentualny błąd przy pobieraniu komentarzy
-  const [error, setError] = useState('')
-}
+  const [error, setError] = useState("");
+};
 ```
 
 Chcielibyśmy, aby po pierwszym renderowaniu komponentu pobrać wszystkie komentarze z serwera.
-Aby uzyskać taki efekt musimy użyć drugiego hooka React - <a href="/glossary/useEffect" target="_blank">`useEffect`</a>.
+Aby uzyskać taki efekt musimy użyć drugiego hooka React - <a href="/glossary/useEffect" target="_blank">`useEffect`</a>.\
+W tym `useEffect` wywołajmy funkcję pobierającą komentarze: `fetchComments()`.
 
 ```js
 // Zauważ, że w tablica zależności jest pusta, co oznacza, że ten efekt
 // zostanie uruchomiony tylko raz, po pierwszym renderowaniu komponentu
 useEffect(() => {
-  fetchComments()
-}, [])
+  fetchComments();
+}, []);
 ```
 
 ### Funkcja `fetchComments`
 
-Przy renderowaniu komponentu mamy wywołanie funkcji, której zadaniem będzie pobranie wszystkich komentarzy z serwera - `fetchComments()`.
+Przy renderowaniu komponentu mamy wywołanie <a href="/glossary/funkcja" target="_blank">funkcji</a>, której zadaniem będzie pobranie wszystkich komentarzy z serwera - `fetchComments()`.
 
-Teraz postarajmy się stworzyc taka funkcję.
+Teraz postarajmy się stworzyc taką funkcję.
 
 ```js
 // Funkcja asynchroniczna pobierająca komentarze z serwera
 const fetchComments = async () => {
   try {
     // Pobieranie komentarzy z serwera
-    const response = await fetch('/comments')
+    const response = await fetch("/comments");
     // Obsługa odpowiedzi z serwera
     if (!response.ok) {
-      throw new Error('Nie można pobrać komentarzy')
+      throw new Error("Nie można pobrać komentarzy");
     }
     // Konwersja (parsowanie) odpowiedzi serwera na listę komentarzy w formacie JSON
-    const data = await response.json()
+    const data = await response.json();
     // Aktualizacja stanu komentarzy
-    setComments(data)
+    setComments(data);
   } catch (error) {
     // Aktualizacja stanu błędu
-    setError(error.message)
+    setError(error.message);
   }
-}
+};
 ```
 
 ### Definicja funkcji `fetchComments`
 
-Funkcja `fetchComments` jest to funkcja asynchroniczna (`async`), co oznacza, że może wykonywać operacje, które zajmują pewien czas (takie jak pobieranie danych z serwera), nie blokując przy tym wykonywania innych operacji w aplikacji.
+Funkcja `fetchComments` jest to funkcja asynchroniczna (`async`), co oznacza, że może wykonywać operacje, które zajmują pewien czas (jak np. pobieranie danych z serwera), nie blokując przy tym wykonywania innych operacji w aplikacji.
 
 Zauważ, że nasza funkcja jest podzielona na 2 bloki: `try` i `catch`.
 
-Blok `try` definiuje fragment kodu, w którym mogą wystąpić błędy.
-Wewnątrz bloku `try` najpierw próbujemy wykonać pobranie komentarzy z serwera przy użyciu metody `fetch`.
+Blok `try` definiuje fragment kodu, w którym mogą wystąpić błędy.\
+Wewnątrz bloku `try` najpierw próbujemy wykonać pobranie komentarzy z serwera przy użyciu metody `fetch`.\
 Metoda `fetch` jest wbudowaną funkcją w języku JavaScript i służy do wykonywania zapytań sieciowych, takich jak pobieranie danych z serwera.
 
 #### Pobieranie danych z serwera
 
 Endpoint `/comments` jest adresem, z którego pobieramy dane, w naszym przypadku jest to symulowany serwer dostarczający dane z pliku JSON ( źródło: `src\data\db.json`, w przeglądarce: <a href="http://localhost:3001/comments" target="_blank">http://localhost:3001/comments</a>).
-
-Dzięki metodzie `fetch` możemy wysyłać zapytania HTTP do tego endpointu i pobierać odpowiednie dane, które są następnie przetwarzane przez naszą aplikację.
+Adres ten przekazujemy do metody `fetch` jako <a href="/glossary/argument" target="_blank">`argument`</a>. 
 
 #### Obsługa odpowiedzi z serwera
 
-Po wykonaniu zapytania do serwera, oczekujemy na odpowiedź.
-Jeśli wystąpi błąd (np. brak połączenia z internetem, błąd serwera), zostanie zwrócony obiekt `Response` z odpowiednią informacją o błędzie. W takim przypadku, wywołujemy instrukcję `throw new Error('Nie można pobrać komentarzy')`, która rzuca nowym obiektem błędu z określonym komunikatem.
+Po wykonaniu zapytania do serwera, oczekujemy na odpowiedź.\
+Jeśli wystąpi błąd (np. brak połączenia z internetem, błąd serwera), zostanie zwrócony obiekt `Response` z odpowiednią informacją o błędzie. W takim przypadku, wywołujemy instrukcję `throw new Error('Nie można pobrać komentarzy')`, która rzuca nowym obiektem błędu z określonym komunikatem.\
+Zauważ,że używamy tu <a href="/glossary/instrukcje-warunkowe" target="_blank">instrukcji warunkowej</a>, za pomoca której sprawdzamy, czy warunek jest spełniony, gdy` response.ok` nie jest prawdziwe. Używamy tu <a href="/glossary/operatory" target="_blank">operatora logicznego</a> negacji - `!`
+```js
+if (!response.ok)
+```
 
-Jeśli odpowiedź z serwera jest poprawna (czyli status odpowiedzi jest `200 OK`), serwer przesyła odpowiedź w formacie JSON, którą musimy przekonwertować na użyteczny dla JavaScript obiekt. Do tego celu używamy metody `json()`.\
-Metoda `json()` parsuje ciało odpowiedzi jako JSON i zwraca obietnicę (Promise). Gdy ta obietnica się rozwiąże, otrzymujemy przetworzony obiekt JSON, który możemy wykorzystać w naszej aplikacji.
+Kiedy serwer odpowiada poprawnie (`ok:true` lub `status:200`), otrzymujemy odpowiedź w formacie `JSON`.\
+Aby przetworzyć te dane w JavaScript, używamy metody `json()`, która zwraca obietnicę. Aby uzyskać dostęp do przetworzonych danych JSON, musimy poczekać, aż ta obietnica się rozwiąże. Do tego celu używamy słowa kluczowego `await`. Użycie `await` sprawia, że funkcja zawierająca ten kod jest wstrzymywana do czasu rozwiązania obietnicy, co oznacza, że inne instrukcje w funkcji nie będą wykonywane, dopóki dane JSON nie zostaną pobrane i przetworzone.
 
-Ta operacja może zająć pewien czas, a ponieważ chcemy uniknąć przerwania wykonywania innych instrukcji, używamy słowa kluczowego `await`, co oznacza, że chcemy poczekać, aż operacja parsowania JSON zostanie zakończona, zanim przejdziemy dalej. 
-
-Gdy operacja się powiedzie, wynik parsowania zostanie przypisany do zmiennej `data`. Następnie, możemy użyć tej zmiennej do zaktualizowania stanu komponentu `comments`, wykorzystując funkcję `setComments`, która jest dostępna dzięki hookowi `useState`. Dzięki temu zaktualizujemy listę komentarzy w naszej aplikacji na podstawie danych pobranych z serwera.
+Gdy operacja się powiedzie, wynik parsowania zostanie przypisany do zmiennej `data`. Następnie, możemy użyć tej zmiennej do zaktualizowania stanu komponentu `comments`, wykorzystując funkcję `setComments`, która jest dostępna dzięki hookowi `useState`.\
+Dzięki temu zaktualizujemy listę komentarzy w naszej aplikacji na podstawie danych pobranych z serwera.
 
 #### Ustawianie stanu błędu
 
@@ -109,65 +112,71 @@ Jeśli wystąpi błąd, ustawiamy stan `error` za pomocą funkcji `setError`. W 
 
 Teraz dodajmy fragment kodu, który definiuje, jak będzie wyglądać renderowanie części naszego interfejsu użytkownika obejmująca sekcję z komentarzami.
 
-W bloku `return ()` tworzymy  `div` z klasą `comment-section` - element kontenerowy, który będzie zawierał całą sekcję z komentarzami.
+W bloku `return ()` tworzymy `div` z klasą `comment-section` - element kontenerowy, który będzie zawierał całą sekcję z komentarzami.
 
-Teraz stwórzmy warunek, który sprawdza, czy wystąpił jakiś błąd podczas pobierania komentarzy. 
+Teraz stwórzmy warunek, który sprawdza, czy wystąpił jakiś błąd podczas pobierania komentarzy.
 Jeśli wystąpiła błąd - zwrócimy komunikat o błędzie, jesli nie wyrenderujemy komentarze pobrane z serwer.
 
 Uzyjemy tu <a href="/glossary/operator-trójargumentowy/" target="_blank">operatora trójargumentowego</a>.
+
 ```js
 {error ? ( <p className="error">{error}</p> ) : ( <CommentList comments={comments} /> )}
 ```
+
 Jeśli zmienna `error` (ta, którą deklarowaliśmy za pomocą hooku `useState`) ma wartość (czyli wystąpił błąd), renderujemy `<p>` z klasą `error`, który wyświetla komunikat o błędzie zdefiniowany w funkcji `fetchComments`.
-Jeśli nie ma błędu (czyli `error` jest pustym stringiem), renderujemy komponent `<CommentList />`, który odpowiada za wyświetlanie listy komentarzy. 
+Jeśli nie ma błędu (czyli `error` jest pustym stringiem), renderujemy komponent `<CommentList />`, który odpowiada za wyświetlanie listy komentarzy.
 
-### Modyfikacja komponentu ` <CommentList />`
+### Modyfikacja komponentu `CommentList`
 
-Dotychczas w komponencie `<CommentList />` mielismy zdeklarowaną tablicę `comments` zawierającą obiekty z komentarzami.\
-Teraz możemy wykorzystać komentarze pobrane z serwera i przypisane do stanu `comments` w komponencie `CommentSection.js` i przekazać je do komponenta `<CommentList />` przez `props`:\
-` <CommentList comments={comments} /> `.
+Dotychczas w komponencie `CommentList` mielismy zdeklarowaną tablicę `comments` zawierającą obiekty z komentarzami.\
+Teraz możemy wykorzystać komentarze pobrane z serwera i przypisane do stanu `comments` w komponencie `CommentSection.js` i przekazać je do komponentu `CommentList` przez `props`:\
+```js
+<CommentList comments={comments} />
+```
 
-Zmodyfikujmy teraz komponent `<CommentList />`:
+Zmodyfikujmy teraz komponent `CommentList`:
+
 1. Usuńmy stałą `comments`: `const comments = [...]`
 2. przekażmy `props`: `const CommentList = ({ comments }) => {`
 
 ## Podsumowanie
-Podsumowując nasz komponent `CommentSection.js`  powinien wyglądać tak: 
+
+Podsumowując nasz komponent `CommentSection.js` powinien wyglądać tak:
+
 ```js
-import React, { useEffect, useState } from 'react'
-import AddCommentForm from './AddCommentForm'
-import CommentList from './CommentList'
+import React, { useEffect, useState } from "react";
+import AddCommentForm from "./AddCommentForm";
+import CommentList from "./CommentList";
 
 // Komponent CommentSection służy wyświetlania wszystkich komentarzy wraz z formularzem
 const CommentSection = ({ user }) => {
   // Stan komponentu: comments - aktualna lista komentarzy, error - ewentualny błąd przy pobieraniu komentarzy
-  const [comments, setComments] = useState([])
-  const [error, setError] = useState('')
+  const [comments, setComments] = useState([]);
+  const [error, setError] = useState("");
 
   // Funkcja asynchroniczna pobierająca komentarze z serwera
   const fetchComments = async () => {
     try {
-      // Pobieranie komentarzy z serwera 
-      const response = await fetch('/comments')
+      // Pobieranie komentarzy z serwera
+      const response = await fetch("/comments");
       // Obsługa odpowiedzi z serwera
       if (!response.ok) {
-        throw new Error('Nie można pobrać komentarzy')
+        throw new Error("Nie można pobrać komentarzy");
       }
       // Konwersja (parsowanie) odpowiedź serwera na listę komentarzy w formacie JSON
-      const data = await response.json()
+      const data = await response.json();
       // Aktualizacja stanu komentarzy
-      setComments(data)
+      setComments(data);
     } catch (error) {
       // Aktualizacja stanu błędu
-      setError(error.message)
+      setError(error.message);
     }
-  }
+  };
 
   // Wywołanie funkcji fetchComments() po pierwszym renderowaniu komponentu, aby pobrać komentarze z serwera
   useEffect(() => {
-    fetchComments()
-  }, [])
-
+    fetchComments();
+  }, []);
 
   // Renderowanie komponentu CommentSection: wyświetlanie listy komentarzy lub błędu oraz formularza dodawania komentarza
   return (
@@ -178,27 +187,25 @@ const CommentSection = ({ user }) => {
         <CommentList comments={comments} />
       )}
     </div>
-  )
-}
+  );
+};
 
-export default CommentSection
+export default CommentSection;
 ```
 
 Możemy teraz ten komponent dodać do komponentu `App`.
 
 ```js
-import React from 'react';
-import CommentSection from './components/CommentSection';
-
+import React from "react";
+import CommentSection from "./components/CommentSection";
 
 function App() {
-  
   return (
     <div className="App">
       <CommentSection />
     </div>
   );
-} 
+}
 
 export default App;
 ```

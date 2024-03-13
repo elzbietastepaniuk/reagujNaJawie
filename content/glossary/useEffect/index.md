@@ -1,13 +1,13 @@
 ---
 title: "useEffect"
 description: "hook w React"
-id: "20"
+id: "21"
 ---
 
 `useEffect` jest hookiem w React, który pozwala nam wykonywać jakieś akcje w odpowiedzi na zmiany w naszej aplikacji. Możemy go porównać do "reakcji łańcuchowej" - coś się zmienia, a my reagujemy w zależności od tego, co się stało.
 
 ```js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function WelcomeMessage() {
   const [showMessage, setShowMessage] = useState(false);
@@ -16,11 +16,7 @@ function WelcomeMessage() {
     setShowMessage(true);
   }, []);
 
-  return (
-    <div>
-      {showMessage && <p>Witaj na stronie!</p>}
-    </div>
-  );
+  return <div>{showMessage && <p>Witaj na stronie!</p>}</div>;
 }
 ```
 
@@ -32,14 +28,14 @@ Przykłady:
 
 ```js
 useEffect(() => {
-  console.log('Komponent zrenderowany');
+  console.log("Komponent zrenderowany");
 }, []); // Ta pusta tablica oznacza, że efekt zostanie uruchomiony tylko raz, po pierwszym renderowaniu komponentu
 ```
 
-
 2. Efekt uruchomiony za każdym razem, gdy się zmieni wartość
+
 ```js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function Counter() {
   const [count, setCount] = useState(0);

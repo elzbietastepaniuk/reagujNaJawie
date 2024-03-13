@@ -1,14 +1,14 @@
 // glossary.js
 
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import GlossaryIndex from "../components/glossary-index"
-import Seo from "../components/seo"
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import GlossaryIndex from "../components/glossary-index";
+import Seo from "../components/seo";
 
 const GlossaryPage = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const terms = data.allMarkdownRemark.nodes
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
+  const terms = data.allMarkdownRemark.nodes;
 
   const sortedTerms = terms.sort((a, b) => {
     const idA = parseInt(a.frontmatter.id);
@@ -20,10 +20,10 @@ const GlossaryPage = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <GlossaryIndex terms={sortedTerms} />
     </Layout>
-  )
-}
+  );
+};
 
-export const Head = () => <Seo title="Słowniczek" />
+export const Head = () => <Seo title="Słowniczek" />;
 
 export const query = graphql`
   query {
@@ -32,9 +32,7 @@ export const query = graphql`
         title
       }
     }
-    allMarkdownRemark(
-      filter: { fields: { slug: { regex: "/glossary/" } } }
-    ) {
+    allMarkdownRemark(filter: { fields: { slug: { regex: "/glossary/" } } }) {
       nodes {
         id
         frontmatter {
@@ -48,6 +46,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default GlossaryPage
+export default GlossaryPage;

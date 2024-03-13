@@ -20,6 +20,7 @@ if (x > 5) {
   console.log("x jest większe niż 5");
 }
 ```
+
 ### Instrukcja warunkowa else if:
 
 Służy do wykonania innych działań, jeśli pierwszy warunek nie jest spełniony, a kolejny warunek jest spełniony.
@@ -38,6 +39,7 @@ if (y > 5) {
   console.log("y jest mniejsze niż 5");
 }
 ```
+
 ### Instrukcja warunkowa else:
 
 Służy do wykonania działań, jeśli żaden z poprzednich warunków nie jest spełniony.
@@ -56,6 +58,5 @@ if (z > 5) {
   console.log("z nie jest większe niż 5");
 }
 ```
+
 Te instrukcje warunkowe pozwalają na elastyczne zarządzanie przepływem sterowania w programach JavaScript w zależności od spełnienia określonych warunków.
-
-

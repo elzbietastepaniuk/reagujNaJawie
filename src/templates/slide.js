@@ -1,14 +1,14 @@
-import * as React from 'react'
-import { Link, graphql } from 'gatsby'
+import * as React from "react";
+import { Link, graphql } from "gatsby";
 
-import Layout from '../components/layout'
-import Seo from '../components/seo'
+import Layout from "../components/layout";
+import Seo from "../components/seo";
 
 const SlideTemplate = ({
   data: { previous, next, site, markdownRemark: post },
-  location
+  location,
 }) => {
-  const siteTitle = site.siteMetadata?.title || `Title`
+  const siteTitle = site.siteMetadata?.title || `Title`;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -38,7 +38,7 @@ const SlideTemplate = ({
             flexWrap: `wrap`,
             justifyContent: `space-between`,
             listStyle: `none`,
-            padding: 0
+            padding: 0,
           }}
         >
           <li>
@@ -58,8 +58,8 @@ const SlideTemplate = ({
         </ul>
       </nav>
     </Layout>
-  )
-}
+  );
+};
 
 export const Head = ({ data: { markdownRemark: post } }) => {
   return (
@@ -67,10 +67,10 @@ export const Head = ({ data: { markdownRemark: post } }) => {
       title={post.frontmatter.title}
       description={post.frontmatter.description || post.excerpt}
     />
-  )
-}
+  );
+};
 
-export default SlideTemplate
+export default SlideTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug(
@@ -110,4 +110,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

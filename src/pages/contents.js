@@ -27,18 +27,15 @@ const Contents = ({ data, location }) => {
           className="glossary-list glossary-list--vertical"
         >
           {slides.length > 0 &&
-            slides.map(
-              (slide, index) =>
-                index > 0 && (
-                  <li key={slide.id}>
-                    <Link to={slide.fields.slug} itemProp="url">
-                      <h3>
-                        {index} {slide.frontmatter.title || slide.fields.slug}
-                      </h3>
-                    </Link>
-                  </li>
-                )
-            )}
+            slides.map((slide, index) => (
+              <li key={slide.id}>
+                <Link to={slide.fields.slug} itemProp="url">
+                  <h3>
+                    {index} {slide.frontmatter.title || slide.fields.slug}
+                  </h3>
+                </Link>
+              </li>
+            ))}
         </ol>
       </div>
     </Layout>
@@ -47,11 +44,6 @@ const Contents = ({ data, location }) => {
 
 export default Contents
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
 export const Head = () => <Seo title="Spis treści" />
 
 export const pageQuery = graphql`

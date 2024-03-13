@@ -1,37 +1,37 @@
 ---
 title: Komponent `CommentList.js`
-id: '22'
+id: "22"
 ---
 
 Dodalismy już kilka komentarzy, ale ręczne dodawanie kolejnych elementów raczej nie ma sensu :)
-Potrzebujemy zebrać je wszystkie w jedną tablicę, aby móc po niej iterowac i automatycznie tworzyć nowe elementy DOM.
+Potrzebujemy zebrać je wszystkie w jedną <a href="/glossary/tablica/" target="_blank">tablicę</a>, aby móc po niej iterowac i automatycznie tworzyć nowe elementy DOM.
 
-Taka tablica powina wyglądać tak:
+Taka tablica będzie składała się wielu <a href="/glossary/obiekt/" target="_blank">obiektów</a>, z których każdy z nich będzie zwierał dane dla pojedynczego komentarza:
 
 ```js
 const comments = [
   {
-    id: '1',
-    avatarSrc: '/images/avatars/av2.jpg',
-    nickname: 'johnny2000',
-    content: 'Bardzo ciekawy artykuł!'
+    id: "1",
+    avatarSrc: "/images/avatars/av2.jpg",
+    nickname: "johnny2000",
+    content: "Bardzo ciekawy artykuł!",
   },
   {
-    id: '2',
-    avatarSrc: '/images/avatars/av1.jpg',
-    nickname: 'harmony123',
-    content: 'Fajnie, lećmy dalej'
+    id: "2",
+    avatarSrc: "/images/avatars/av1.jpg",
+    nickname: "harmony123",
+    content: "Fajnie, lećmy dalej",
   },
   {
-    id: '3',
-    avatarSrc: '/images/avatars/av3.jpg',
-    nickname: 'alina_malina',
-    content: 'Reagujmy dalej :)'
-  }
-]
+    id: "3",
+    avatarSrc: "/images/avatars/av3.jpg",
+    nickname: "alina_malina",
+    content: "Reagujmy dalej :)",
+  },
+];
 ```
 
-Aby iterowac po tej tablicy i na jej podstawie renderować kolejne komentarze na podstawie komponentu `Comment.js` musimy posłuzyc się metodą `map()`. Jest to metoda dostępna dla wszystkich obiektów typu Array (tablic).
+Aby iterowac po tej tablicy i na jej podstawie renderować kolejne komentarze na podstawie komponentu `Comment.js` musimy posłużyć się metodą <a href="/glossary/petle/" target="_blank">`map()`</a>. Jest to metoda dostępna dla wszystkich obiektów typu <a href="/glossary/tablica/" target="_blank">Array (tablic)</a>.
 
 Działanie metody `map()` polega na przetworzeniu każdego elementu tablicy przy użyciu funkcji przekazanej jako argument do metody `map()`. W wyniku działania metody `map()` otrzymujesz nową tablicę.
 
@@ -44,10 +44,11 @@ const commentsElements = comments.map((comment) => (
       <p>{(comment, content)}</p>
     </div>
   </li>
-))
+));
 
-console.log(commentsElements)[
+console.log(commentsElements)
   // Konsola zwróci nam wynik nowej tablicy
+  [
   ((
     <li className="comment" id="1">
       <img className="avatar" src="/images/avatars/av2.jpg" alt="johnny2000" />
@@ -79,18 +80,18 @@ console.log(commentsElements)[
       </div>
     </li>
   ))
-]
+];
 ```
 
 Cała tablica `commentsElements` reprezentuje listę komentarzy gotowych do wyrenderowania w interfejsie użytkownika.
 
 Mając wiedzę, jak można zastosować metodę `map()` na tablicy `comments`, możemy użyć naszego komponentu `Comment.js`.
 
-Stwórzmy również nasz nowy komponent `CommentList`
+Stwórzmy również nowy komponent `CommentList`
 
 ```js
-import React from 'react'
-import Comment from './components/Comment'
+import React from "react";
+import Comment from "./components/Comment";
 
 const CommentList = () => {
   const commentsElements = comments.map((comment) => (
@@ -101,16 +102,16 @@ const CommentList = () => {
       nickname={comment.nickname}
       content={comment.content}
     />
-  ))
+  ));
 
   return (
     <div>
       <ul>{commentsElements}</ul>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
 ```
 
 > Pamiętaj:
@@ -119,30 +120,30 @@ export default App
 Dodajmy także nasz obiekt z komentarzami i uzyjmy drugiego sposobu zapisu, a jedyną różnicą jest umieszczenie mapowania tablicy `comments` bezpośrednio w komponencie zamiast na zewnątrz:
 
 ```js
-import React from 'react'
-import Comment from './components/Comment'
+import React from "react";
+import Comment from "./components/Comment";
 
 const CommentList = () => {
   const comments = [
     {
-      id: '1',
-      avatarSrc: '/images/avatars/av2.jpg',
-      nickname: 'johnny2000',
-      content: 'Bardzo ciekawy artykuł!'
+      id: "1",
+      avatarSrc: "/images/avatars/av2.jpg",
+      nickname: "johnny2000",
+      content: "Bardzo ciekawy artykuł!",
     },
     {
-      id: '2',
-      avatarSrc: '/images/avatars/av1.jpg',
-      nickname: 'harmony123',
-      content: 'Fajnie, lećmy dalej'
+      id: "2",
+      avatarSrc: "/images/avatars/av1.jpg",
+      nickname: "harmony123",
+      content: "Fajnie, lećmy dalej",
     },
     {
-      id: '3',
-      avatarSrc: '/images/avatars/av3.jpg',
-      nickname: 'alina_malina',
-      content: 'Reagujmy dalej :)'
-    }
-  ]
+      id: "3",
+      avatarSrc: "/images/avatars/av3.jpg",
+      nickname: "alina_malina",
+      content: "Reagujmy dalej :)",
+    },
+  ];
 
   return (
     <div>
@@ -158,8 +159,8 @@ const CommentList = () => {
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
 ```

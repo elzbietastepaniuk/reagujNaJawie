@@ -1,24 +1,23 @@
-import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import React, { useState, useEffect } from "react";
+import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
+  const rootPath = `${__PATH_PREFIX__}/`;
 
-  const isRootPath = location.pathname === rootPath
-  const isInGlossary = location.pathname === "/glossary/"
-  let header
+  const isRootPath = location.pathname === rootPath;
+  const isInGlossary = location.pathname === "/glossary/";
+  let header;
 
-  const [headerHeight, setHeaderHeight] = useState(0)
+  const [headerHeight, setHeaderHeight] = useState(0);
 
   useEffect(() => {
-    const headerElement = document.querySelector('header')
+    const headerElement = document.querySelector("header");
     if (headerElement) {
-      const height = headerElement.getBoundingClientRect().height
-      setHeaderHeight(height)
+      const height = headerElement.getBoundingClientRect().height;
+      setHeaderHeight(height);
     }
-  }, [])
-
+  }, []);
 
   if (isRootPath) {
     header = (
@@ -48,7 +47,7 @@ const Layout = ({ location, title, children }) => {
           />
         </Link>
       </div>
-    )
+    );
   } else {
     header = (
       <div className="global-wrapper" data-is-root-path={isRootPath}>
@@ -75,13 +74,17 @@ const Layout = ({ location, title, children }) => {
           </Link>
         )}
       </div>
-    )
+    );
   }
 
   return (
     <>
       <header className="global-header">{header}</header>
-      <div className="global-wrapper global-wrapper--flex" data-is-root-path={isRootPath} style={{minHeight: `calc(100vh - ${headerHeight}px)`}}>
+      <div
+        className="global-wrapper global-wrapper--flex"
+        data-is-root-path={isRootPath}
+        style={{ minHeight: `calc(100vh - ${headerHeight}px)` }}
+      >
         <main>{children}</main>
         <footer>
           <StaticImage
@@ -94,7 +97,7 @@ const Layout = ({ location, title, children }) => {
         </footer>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
