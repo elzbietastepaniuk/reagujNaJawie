@@ -19,10 +19,15 @@ Przyjrzyjmy się jak wygląda kod `html` pojedynczego komentarza:
 
 i pomyślmy jakie dane są potrzebne, aby utworzyć reużywalny komponent.
 
-Są to: id, src - źródło awatara, nick, oraz treść komentarza.
+Są to: 
+- id, 
+- src - źródło awatara, 
+- nick, 
+- treść komentarza.
+
 Więc te dane będziemy musieli przekazywać do komponentu.
 
-Kolejnym krokiem będzie stworzenie <a href="/glossary/komponent/" target="_blank">komponentu</a> `Comment` w React, który będzie renderował pojedynczy komentarz na podstawie danych przekazanych przez `props`. Aby to zrobić, potrzebujemy utworzyć nowy plik dla tego komponentu.
+Kolejnym krokiem będzie stworzenie <a href="/glossary/komponent/" target="_blank">komponentu React</a> `Comment`, który będzie renderował pojedynczy komentarz na podstawie danych przekazanych przez `props`. Aby to zrobić, potrzebujemy utworzyć nowy plik dla tego komponentu.
 
 1. Utwórz nowy plik o nazwie `Comment.js` w folderze components.
 2. W pliku `Comment.js` rozpocznij od importu biblioteki React:
@@ -51,7 +56,8 @@ const Comment = ({ id, avatarSrc, nickname, content }) => {
 export default Comment;
 ```
 
-W powyższym kodzie, `Comment` jest funkcją komponentu, która przyjmuje cztery argumenty: `id`, `avatarSrc`, `nickname`, `content`. Następnie zwraca element listy (`<li>`) reprezentujący pojedynczy komentarz. Każdy komentarz zawiera zdjęcie awatara (`<img>`), nazwę użytkownika (`<p>` z klasą `nickname`) oraz treść komentarza (`<p>`).
+W powyższym kodzie, `Comment` jest funkcją komponentu, która przyjmuje cztery argumenty: `id`, `avatarSrc`, `nickname`, `content`. Następnie zwraca element listy (`<li>`) reprezentujący pojedynczy komentarz.\
+Każdy komentarz zawiera zdjęcie awatara (`<img>`), nazwę użytkownika (`<p>` z klasą `nickname`) oraz treść komentarza (`<p>`).
 
 Zauważ, że return nasz kod `html` zmieszamy w bloku `return (`. To oznacza, że zaczynamy zwracać (czyli renderować) fragment kodu `JSX`, który będzie stanowił część naszego interfejsu.
 
