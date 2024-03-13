@@ -1,7 +1,7 @@
 ---
-title: 'document'
-description: 'obiekt document'
-id: '1'
+title: "document"
+description: "obiekt document"
+id: "1"
 ---
 
 Obiekt `document` jest jednym z obiektów dostępnych w środowisku przeglądarki w JavaScript. Reprezentuje on całą stronę lub dokument HTML, nad którym aktualnie działa skrypt JavaScript.
@@ -12,13 +12,13 @@ Oto najważniejsze przykłady użycia obiektu `document`:
 
 ```js
 // Pobieranie elementu o danym identyfikatorze (id)
-const header = document.getElementById('header')
+const header = document.getElementById("header");
 
 // Pobieranie wszystkich elementów o danej klasie (class)
-const paragraphs = document.getElementsByClassName('paragraph')
+const paragraphs = document.getElementsByClassName("paragraph");
 
 // Pobieranie pierwszego elementu div
-const firstDiv = document.querySelector('div')
+const firstDiv = document.querySelector("div");
 ```
 
 **Manipulacja zawartością HTML** można użyć obiektu `document` do manipulacji zawartością strony internetowej, taką jak dodawanie, usuwanie lub modyfikowanie elementów HTML.

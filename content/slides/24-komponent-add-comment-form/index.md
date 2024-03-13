@@ -1,6 +1,6 @@
 ---
 title: Komponent `AddCommentForm.js`
-id: '24'
+id: "24"
 ---
 
 Komponent `AddCommentForm.js` służy do dodawania nowych komentarzy.
@@ -8,7 +8,7 @@ Podobnie jak w komponencie `CommentSection` będziemy wykorzystywac komunikację
 
 ## Struktura komponentu
 
-Skupmy się na wstępie na strukturze komponentu a następnie zdefiniujmy funkcje, które będą potrzebne do prawidłowego działania komponentu.
+Skupmy się na wstępie na strukturze komponentu, a następnie zdefiniujmy funkcje i stany, które będą potrzebne do prawidłowego działania komponentu.
 
 ```js
 return (
@@ -46,13 +46,13 @@ Z tego kodu wynika, że potrzebujemy 3 funkcji oraz 2 stanów.
 Tu również wykorzystamy hook stanu <a href="/glossary/useState" target="_blank">`useState`</a> do przechowywania aktualnego tekstu komentarza (`comment`) oraz ewentualnego błędu przy dodawaniu komentarza (`error`).
 
 ```js
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 const AddCommentForm = () => {
   // Stan komponentu: comment - aktualny tekst komentarza, error - ewentualny błąd przy dodawaniu komentarza
-  const [comment, setComment] = useState('')
-  const [error, setError] = useState('')
-}
+  const [comment, setComment] = useState("");
+  const [error, setError] = useState("");
+};
 ```
 
 Mając to możemy uzupełnić tymi stanami strukturę:
@@ -72,7 +72,12 @@ Mając to możemy uzupełnić tymi stanami strukturę:
  <span className="error">{error}</span> // Treść błędu
 ```
 
-Możemy także dodać warunek dla błędu z pomocą <a href="/glossary/operator-trójargumentowy/" target="_blank">operatora trójargumentowego</a>, tak jak to zrobilismy komponencie `CommentSection.js`. Spróbuj zrobić to samodzielnie.
+Możemy także dodać warunek dla błędu z pomocą <a href="/glossary/operatory/" target="_blank">operatora logicznego `&&` </a>, tak jak to zrobilismy komponencie `CommentSection.js`. Spróbuj zrobić to samodzielnie.
+
+Podobnie za pomocą <a href="/glossary/operator-trójargumentowy/" target="_blank">operatora trójargumentowego</a> możemy dodać czerwone obramowanie dla pola tekstowego, jeśli wystepuje błąd. 
+```js
+style={{ resize: 'none', borderColor: error ? 'red' : '' }}
+```
 
 ## Obsługa zdarzeń
 
@@ -84,7 +89,7 @@ Ustalilismy, że ten komponent obsługuje trzy zdarzenia, które są istotne dla
 
 3. Obsługa zdarzenia zmiany zawartości pola tekstowego. Aktualizuje stan komponentu, aby odzwierciedlić nowy wprowadzony przez użytkownika tekst. Niech funkcja obsługująca to zdarzenia nazywa sie `handleChange`.
 
-Napiszmy te funkcje!
+Napiszmy te funkcje.
 
 ### Obsługa zdarzenia wysłania formularza `handleSubmit`
 
@@ -110,10 +115,10 @@ Pozostałe pola uzupełnimy później.
 ```js
 // Tworzenie obiektu nowego komentarza.
 const newComment = {
-  nickname: '',
+  nickname: "",
   content: comment,
-  avatar: ''
-}
+  avatar: "",
+};
 ```
 
 #### Wysyłanie komentarza na serwer
@@ -125,13 +130,13 @@ Wewnątrz bloku `try` użyjemy funkcji `fetch`, która przyjmuje 2 argumenty:
 1. endpoint `/comments`, adres URL, do którego wysyłamy dane
 2. obiekt konfiguracyjny, który zawiera informacje takie jak `method`, `headers` i `body`.
 
-`method: 'POST'` określa metodę żądania HTTP, w tym przypadku POST. Metoda POST jest używana do wysyłania danych do serwera, takich jak nowy komentarz.
+- `method: 'POST'` określa metodę żądania HTTP, w tym przypadku POST. Metoda POST jest używana do wysyłania danych do serwera, takich jak nowy komentarz.
 
-`body:` zawiera dane, które chcemy przesłać do serwera. Może to być tekst, formularz, obiekt JSON itp., w zależności od tego, jakie dane chcemy wysłać.
+- `body:` zawiera dane, które chcemy przesłać do serwera. Może to być tekst, formularz, obiekt JSON itp., w zależności od tego, jakie dane chcemy wysłać.
 
-`headers` jest obiektem, który zawiera różne nagłówki HTTP jako pary klucz-wartość. Na przykład, w przypadku wysyłania żądania z treścią w formacie JSON, możemy dodać nagłówek `Content-Type` z wartością `application/json`, aby poinformować serwer, że przesyłamy dane w formacie JSON.
+- `headers` jest obiektem, który zawiera różne nagłówki HTTP jako pary klucz-wartość. Na przykład, w przypadku wysyłania żądania z treścią w formacie JSON, możemy dodać nagłówek `Content-Type` z wartością `application/json`, aby poinformować serwer, że przesyłamy dane w formacie JSON.
 
-Nastepnie sprawdzamy, czy odpowiedź z serwera jest poprawna. Jeśli nie, to zostaje rzucony błąd. Jeśli odpowiedź jest poprawna, wykonuje się kod w bloku else - czyscimy pole tekstowe, ustawiając wartość komentarza na pusty string, co umożliwia użytkownikowi wprowadzenie nowego komentarza.
+Nastepnie sprawdzamy, czy odpowiedź z serwera jest poprawna. Jeśli nie, to zostaje rzucony błąd. Jeśli odpowiedź jest poprawna, wykonuje się kod w bloku `else` - czyscimy pole tekstowe, ustawiając wartość komentarza na pusty string, co umożliwia użytkownikowi wprowadzenie nowego komentarza.
 
 Jeśli wystąpił jakiś błąd podczas wysyłania komentarza do serwera, w bloku `catch` aktualizuje się stan błędu. Wiadomość błędu jest przechowywana w obiekcie `error`, a `error.message` zawiera tę wiadomość i przekazujemy ją do stanu `error` za pomocą funkcji `setError`.
 
@@ -159,39 +164,43 @@ Jeśli wystąpił jakiś błąd podczas wysyłania komentarza do serwera, w blok
 }
 ```
 
-Możemy jeszcze zabezpieczyć się przed wysłaniem pustego komentarza: `if (comment.trim().length === 0) return`. Metoda `trim()` usuwa puste znaki z początku i końca tekstu, a `length` zwraca długość tekstu. Jeśli komentarz jest pusty, funkcja kończy działanie (`return`).
+Możemy jeszcze zabezpieczyć się przed wysłaniem pustego komentarza: 
+```js
+if (comment.trim().length === 0) return
+```
+Metoda `trim()` usuwa puste znaki z początku i końca tekstu, a `length` zwraca długość tekstu. Jeśli komentarz jest pusty, funkcja kończy działanie (`return`).
 
 Czyli nasz funkcja powinna wyglądać tak:
 
 ```js
 const handleSubmit = async (e) => {
-  e.preventDefault()
+  e.preventDefault();
 
-  if (comment.trim().length === 0) return
+  if (comment.trim().length === 0) return;
 
   const newComment = {
-    nickname: '',
+    nickname: "",
     content: comment,
-    avatar: ''
-  }
+    avatar: "",
+  };
   try {
-    const response = await fetch('/comments', {
-      method: 'POST',
+    const response = await fetch("/comments", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(newComment)
-    })
+      body: JSON.stringify(newComment),
+    });
 
     if (!response.ok) {
-      throw new Error('Błąd przy dodawaniu komentarza')
+      throw new Error("Błąd przy dodawaniu komentarza");
     } else {
-      setComment('')
+      setComment("");
     }
   } catch (error) {
-    setError(error.message)
+    setError(error.message);
   }
-}
+};
 ```
 
 ### Obsługa zdarzenia zmiany zawartości pola tekstowego `handleChange`
@@ -202,8 +211,8 @@ Tu również przekazujemy parametr `e` - event, zdarzenie. Gdy użytkownik wpisu
 
 ```js
 const handleChange = (e) => {
-  setComment(e.target.value)
-}
+  setComment(e.target.value);
+};
 ```
 
 Możemy dodać dynamiczne dostosowywanie wysokości pola tekstowego.
@@ -211,16 +220,16 @@ Możemy dodać dynamiczne dostosowywanie wysokości pola tekstowego.
 Na początku ustawiamy wysokość pola tekstowego na automatyczną. Oznacza to, że wysokość pola tekstowego zostanie dostosowana do jego zawartości.
 
 ```js
-e.target.style.height = 'auto'
+e.target.style.height = "auto";
 ```
 
 Następnie sprawdzamy, czy rzeczywista wysokość treści pola tekstowego jest mniejsza niż 200 pikseli. Jeśli tak, ustawiamy wysokość pola tekstowego na wysokość jego zawartości za pomocą `e.target.scrollHeight`. W przeciwnym razie, jeśli treść pola tekstowego jest większa lub równa 200 pikseli, ustawiamy wysokość na 200 pikseli.
 
 ```js
 if (e.target.scrollHeight < 200) {
-  e.target.style.height = `${e.target.scrollHeight}px`
+  e.target.style.height = `${e.target.scrollHeight}px`;
 } else {
-  e.target.style.height = '200px'
+  e.target.style.height = "200px";
 }
 ```
 
@@ -234,13 +243,13 @@ Dodatkowy po wysłaniu komentarza możemy ustawić wysokość pola `textarea` na
 
 ```js
 const handleKeyDown = (e) => {
-  if (e.key === 'Enter' && !e.shiftKey) {
+  if (e.key === "Enter" && !e.shiftKey) {
     // Wywołanie funkcji wysyłania komentarza do serwera
-    handleSubmit(e)
+    handleSubmit(e);
     // Ustawienie wysokości textarea na auto po wysłaniu komentarza
-    e.target.style.height = 'auto'
+    e.target.style.height = "auto";
   }
-}
+};
 ```
 
 ### Aktualizacja listy komentarzy po dodaniu nowego komentarza
@@ -252,9 +261,9 @@ Aby to zrobić musimy przekazać do komponentu `CommentSection.js` po wysłaniu 
 Najpierw dodajmy komponent `AddCommentForm` do `CommentSection`.
 
 ```js
-import React, { useEffect, useState } from 'react'
-import AddCommentForm from './AddCommentForm'
-import CommentList from './CommentList'
+import React, { useEffect, useState } from "react";
+import AddCommentForm from "./AddCommentForm";
+import CommentList from "./CommentList";
 
 const CommentSection = () => {
   // pozostałe funkcjonalności komponentu
@@ -268,8 +277,8 @@ const CommentSection = () => {
       )}
       <AddCommentForm />
     </div>
-  )
-}
+  );
+};
 ```
 
 Dodajmy props `onAddComment` do którego będzie przekazana nowa funkcja pobierająca dane `handleAddComment`.
@@ -280,6 +289,13 @@ Dodajmy props `onAddComment` do którego będzie przekazana nowa funkcja pobiera
 
 ```js
 const handleAddComment = () => {
-  fetchComments()
-}
+  fetchComments();
+};
 ```
+
+Teraz musimy wykorzystać przekazaną funkcję w komponencie `AddCommentForm`.
+
+Postępuj zgodnie z poniższymi krokami:
+
+1. Przekaż funkcję `onAddComment` jako argument do komponentu `AddCommentForm`
+2. Wywołaj funkcję `onAddComment` - zastanów się, gdzie to najlepiej wykonać.

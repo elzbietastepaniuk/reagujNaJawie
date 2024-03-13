@@ -1,12 +1,12 @@
-import { Link } from 'gatsby'
-import React, { useState } from 'react'
+import { Link } from "gatsby";
+import React, { useState } from "react";
 
 const GlossaryIndex = ({ terms }) => {
-  const [searchTerm, setSearchTerm] = useState('')
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value)
-  }
+    setSearchTerm(event.target.value);
+  };
 
   const filteredTerms = terms.filter(
     (term) =>
@@ -14,7 +14,7 @@ const GlossaryIndex = ({ terms }) => {
       term.frontmatter.description
         .toLowerCase()
         .includes(searchTerm.toLowerCase())
-  )
+  );
 
   return (
     <div className="glossary">
@@ -38,7 +38,7 @@ const GlossaryIndex = ({ terms }) => {
         ))}
       </ol>
     </div>
-  )
-}
+  );
+};
 
-export default GlossaryIndex
+export default GlossaryIndex;

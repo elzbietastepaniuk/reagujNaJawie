@@ -4,9 +4,10 @@ description: "typ danych w JS - boolean"
 id: "11"
 ---
 
-`boolean` -  typ danych, który przyjmuje jedną z dwóch wartości: `true` lub `false`. 
+`boolean` - typ danych, który przyjmuje jedną z dwóch wartości: `true` lub `false`.
+
 ```js
-true, false
+true, false;
 ```
 
 Służy do reprezentowania wartości logicznych i są podstawą dla wielu operacji i konstrukcji warunkowych.
@@ -39,7 +40,8 @@ let wynik2 = c || d; // wynik2 będzie równy true
 ```js
 let x = 5;
 let y = 10;
-let rowne = (x === y); // rowne będzie równy false
-let nierowne = (x !== y); // nierowne będzie równy true
+let rowne = x === y; // rowne będzie równy false
+let nierowne = x !== y; // nierowne będzie równy true
 ```
+
 Zobacz więcej nt. → [operatorów](/glossary/operatory)

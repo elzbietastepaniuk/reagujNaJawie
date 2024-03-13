@@ -3,7 +3,7 @@ title: DevTools
 id: "2"
 ---
 
-DevTools w Chrome to zestaw narzędzi deweloperskich wbudowanych w przeglądarkę Google Chrome. Pozwala on na debugowanie, profilowanie wydajności, analizowanie struktury strony, edycję stylów CSS, testowanie interakcji z DOM-em i wiele innych rzeczy. 
+DevTools w Chrome to zestaw narzędzi deweloperskich wbudowanych w przeglądarkę Google Chrome. Pozwala on na debugowanie, profilowanie wydajności, analizowanie struktury strony, edycję stylów CSS, testowanie interakcji z DOM-em i wiele innych rzeczy.
 
 ### Otwieranie DevTools
 
