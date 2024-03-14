@@ -13,12 +13,12 @@ Naszym zadaniem będzie ożywić go dodając kod JavaScript.
 - przeglądarka internetowa - polecamy Chrome
 - narzędzia programisty - bez nich ani rusz! Naciśnij F12 (Ctrl + Option + I na Macbookach), żeby je otworzyć.
 - edytor kodu - polecamy Visual Studio Code
-- Node.js - środowisko do uruchamiania aplikacji `npm i node@18.19.1`
+- Node.js - w wersji `18.19.1` - <a href="https://nodejs.org/download/release/v18.19.1/" target="_blank">https://nodejs.org/download/release/v18.19.1/</a>
 
 ## Instalacja projektu
 
 - otwórz projekt w programie VSC i otwórz terminal (na górnym menu na opcja "Terminal" lub `Ctrl + Shift + ù` / `Cmd + Shift + ù`)
-- w terminalu wpisz polecenie `npm install` a następnie `npm install -g json-server`
+- w terminalu wpisz polecenie `npm install -g json-server` a następnie `npm install`
 - odpal serwer za pomocą polecania `json-server --watch src/data/db.json --port 3001`
 - odpal projekt za pomoca polecania `npm run start`
 
