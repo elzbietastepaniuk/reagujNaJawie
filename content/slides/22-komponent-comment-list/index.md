@@ -31,7 +31,7 @@ const comments = [
 ];
 ```
 
-Aby iterowac po tej tablicy i na jej podstawie renderować kolejne komentarze na podstawie komponentu `Comment.js` musimy posłużyć się metodą <a href="/glossary/petle/" target="_blank">`map()`</a>. Jest to metoda dostępna dla wszystkich obiektów typu <a href="/glossary/tablica/" target="_blank">Array (tablic)</a>.
+Aby iterować po tej tablicy i renderować kolejne komentarze na podstawie komponentu `Comment.js`, musimy skorzystać z metody <a href="/glossary/petle/" target="_blank">`map()`</a>. Jest to metoda dostępna dla wszystkich obiektów typu <a href="/glossary/tablica/" target="_blank">Array (tablica)</a>.
 
 Działanie metody `map()` polega na przetworzeniu każdego elementu tablicy przy użyciu funkcji przekazanej jako argument do metody `map()`. W wyniku działania metody `map()` otrzymujesz nową tablicę.
 
@@ -117,7 +117,7 @@ export default App;
 > Pamiętaj:
 > Zauważ, że używamy `key={comment.id}` dla każdego elementu Comment, aby React mógł efektywnie zarządzać tymi elementami podczas aktualizacji interfejsu użytkownika. Wartość `key` powinna być unikatowa dla każdego elementu w kolekcji.
 
-Dodajmy także nasz obiekt z komentarzami i uzyjmy drugiego sposobu zapisu, a jedyną różnicą jest umieszczenie mapowania tablicy `comments` bezpośrednio w komponencie zamiast na zewnątrz:
+Dodajmy również nasz obiekt z komentarzami i użyjmy drugiego sposobu zapisu, przy czym jedyną różnicą będzie umieszczenie mapowania tablicy `comments` bezpośrednio w komponencie, a nie na zewnątrz.
 
 ```js
 import React from "react";
