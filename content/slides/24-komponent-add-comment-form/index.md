@@ -74,7 +74,7 @@ Mając to możemy uzupełnić tymi stanami strukturę:
 
 Możemy także dodać warunek dla błędu z pomocą <a href="/glossary/operatory/" target="_blank">operatora logicznego `&&` </a>, tak jak to zrobilismy komponencie `CommentSection.js`. Spróbuj zrobić to samodzielnie.
 
-Podobnie za pomocą <a href="/glossary/operator-trójargumentowy/" target="_blank">operatora trójargumentowego</a> możemy dodać czerwone obramowanie dla pola tekstowego, jeśli wystepuje błąd. 
+Podobnie za pomocą <a href="/glossary/operator-trojargumentowy/" target="_blank">operatora trójargumentowego</a> możemy dodać czerwone obramowanie dla pola tekstowego, jeśli wystepuje błąd. 
 ```js
 style={{ resize: 'none', borderColor: error ? 'red' : '' }}
 ```

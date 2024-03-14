@@ -15,7 +15,7 @@ Metoda `classList` zapewnia szereg przydatnych metod do manipulowania klasami na
 - `add(className)` - dodaje określoną klasę do listy klas elementu
 - `remove(className)` - usuwa określoną klasę z listy klas elementu
 - `toggle(className)` - jeśli klasa istnieje, usuwa ją. Jeśli nie istnieje, dodaje ją
-- `contains(className)` - sprawdza, czy element ma określoną klasę, zwracając wartość logiczną `true` lub `false`
+- `contains(className)` - sprawdza, czy element ma określoną klasę, zwracając <a href="/glossary/wartosc-logiczna/" target="_blank">wartość logiczną</a> `true` lub `false`
 
 Przykład użycia:
 

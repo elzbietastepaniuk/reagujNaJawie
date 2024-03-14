@@ -117,7 +117,7 @@ W bloku `return ()` tworzymy `div` z klasą `comment-section` - element kontener
 Teraz stwórzmy warunek, który sprawdza, czy wystąpił jakiś błąd podczas pobierania komentarzy.
 Jeśli wystąpiła błąd - zwrócimy komunikat o błędzie, jesli nie wyrenderujemy komentarze pobrane z serwer.
 
-Uzyjemy tu <a href="/glossary/operator-trójargumentowy/" target="_blank">operatora trójargumentowego</a>.
+Uzyjemy tu <a href="/glossary/operator-trojargumentowy/" target="_blank">operatora trójargumentowego</a>.
 
 ```js
 {error ? ( <p className="error">{error}</p> ) : ( <CommentList comments={comments} /> )}
