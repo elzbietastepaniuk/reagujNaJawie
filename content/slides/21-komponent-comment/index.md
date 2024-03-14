@@ -59,7 +59,7 @@ export default Comment;
 W powyższym kodzie, `Comment` jest funkcją komponentu, która przyjmuje cztery argumenty: `id`, `avatarSrc`, `nickname`, `content`. Następnie zwraca element listy (`<li>`) reprezentujący pojedynczy komentarz.\
 Każdy komentarz zawiera zdjęcie awatara (`<img>`), nazwę użytkownika (`<p>` z klasą `nickname`) oraz treść komentarza (`<p>`).
 
-Zauważ, że return nasz kod `html` zmieszamy w bloku `return (`. To oznacza, że zaczynamy zwracać (czyli renderować) fragment kodu `JSX`, który będzie stanowił część naszego interfejsu.
+Zauważ, że nasz kod `html` zmieszamy w bloku `return (`. To oznacza, że zaczynamy zwracać (czyli renderować) fragment kodu `JSX`, który będzie stanowił część naszego interfejsu.
 
 > **Pamiętaj**
 > Nawiasy klamrowe `{ }` są używane do osadzania kodu JavaScript wewnątrz JSX, co pozwala na dynamiczne wstawianie wartości lub wyrażeń JavaScript wewnątrz komponentów React.
@@ -68,7 +68,7 @@ Komponent musi również zostać eksportowany.
 
 ## Użycie komponentu `Comment`
 
-Spróbujmy teraz użyć nasz komponent z komentarzem w pliku `App.js` w divie z klasą `App`.
+Teraz spróbujmy użyć naszego komponentu z komentarzem w pliku `App.js`, umieszczając go w elemencie `div` o klasie `App`.\
 Oczywiście należy go najpierw importować.
 
 ```js
