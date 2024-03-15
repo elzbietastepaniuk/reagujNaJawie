@@ -1,7 +1,8 @@
 ---
 title: Komponent `CommentList.js`
-id: "22"
+id: "12"
 ---
+
 
 Dodalismy już kilka komentarzy, ale ręczne dodawanie kolejnych elementów raczej nie ma sensu :)
 Potrzebujemy zebrać je wszystkie w jedną <a href="/glossary/tablica/" target="_blank">tablicę</a>, aby móc po niej iterowac i automatycznie tworzyć nowe elementy DOM.

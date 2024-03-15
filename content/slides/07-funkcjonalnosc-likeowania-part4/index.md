@@ -1,6 +1,6 @@
 ---
 title: Funkcjonalność like'owania part. 4
-id: "7"
+id: "07"
 ---
 
 Serduszka podświetlają nam się prawidłowo, ale brakuje nam dodawania wartości w liczbie serduszek.

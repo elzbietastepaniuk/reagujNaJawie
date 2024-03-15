@@ -1,6 +1,6 @@
 ---
 title: Przejdźmy do projektu
-id: "3"
+id: "03"
 ---
 
 Kiedy już udało nam się odpalić poprawnie projekt i omówiliśmy pokrótce jego strukturę, spróbujmy coś zaprogramować.
