@@ -1,7 +1,7 @@
 ---
 title: "tablica"
 description: "typ danych w JS - array"
-id: "12"
+id: 12
 ---
 
 Tablica, `array`, jest to struktura danych służąca do przechowywania kolekcji elementów w jednym miejscu. Elementy w tablicy mogą być różnego typu: liczby, tekst, obiekty, inne tablice itp. Tablica może być dynamicznie rozszerzana i zmniejszana w trakcie działania programu.

@@ -444,6 +444,14 @@ a:focus {
 
 .glossary-list--vertical {
   grid-template-columns: 1fr;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.glossary-list--vertical a {
+  display: block;
+  width: fit-content;
 }
 
 .glossary-list li a h3 {

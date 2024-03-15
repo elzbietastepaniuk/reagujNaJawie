@@ -1,7 +1,7 @@
 ---
 title: "liczba"
 description: "typ danych w JS - number"
-id: "9"
+id: 9
 ---
 
 `number` - (liczba) - typ danych używany do przechowywania liczb. Może to być liczba całkowita lub liczba zmiennoprzecinkowa np.:

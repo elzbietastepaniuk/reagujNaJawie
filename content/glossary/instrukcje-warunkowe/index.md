@@ -1,7 +1,7 @@
 ---
 title: "instrukcje warunkowe"
 description: "blok kodu w JS"
-id: "16"
+id: 16
 ---
 
 Instrukcje warunkowe w JavaScript służą do wykonywania różnych działań w zależności od spełnienia określonych warunków. Najczęściej stosowanymi instrukcjami warunkowymi są `if`, `else if` oraz `else`. Poniżej znajdziesz krótki opis każdej instrukcji warunkowej wraz z przykładami kodu:

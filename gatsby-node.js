@@ -39,7 +39,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       ...node,
       frontmatter: {
         ...node.frontmatter,
-        id: parseInt(node.frontmatter.id), // Konwersja na liczbę
+        id: node.frontmatter.id, 
       },
     }))
     .sort((a, b) => a.frontmatter.id - b.frontmatter.id);
@@ -63,7 +63,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     .map((node) => node.fields.slug)
     .filter((slug) => slug.startsWith("/glossary/"));
 
-  // Query for all markdown slide posts sorted by date
+  // Query for all markdown slide posts sorted by id
   const slidesResult = await graphql(`
     {
       allMarkdownRemark(sort: { frontmatter: { id: ASC } }, limit: 1000, filter: {
@@ -97,7 +97,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       ...node,
       frontmatter: {
         ...node.frontmatter,
-        id: parseInt(node.frontmatter.id), // Konwersja na liczbę
+        id: node.frontmatter.id, 
       },
     }))
     .sort((a, b) => a.frontmatter.id - b.frontmatter.id);

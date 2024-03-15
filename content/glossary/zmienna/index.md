@@ -1,7 +1,7 @@
 ---
 title: "zmienna"
 description: "pojemnik na dane"
-id: "7"
+id: 7
 ---
 
 W JavaScript używamy **zmiennych** do przechowywania danych. Zmienna jest jak pojemnik, w którym możemy przechowywać różne informacje. Aby zadeklarować zmienną, używamy słowa kluczowego `let` lub `const`, a następnie nadajemy jej nazwę. Na przykład:

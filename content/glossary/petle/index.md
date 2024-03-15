@@ -1,7 +1,7 @@
 ---
 title: "pętle"
 description: "blok kodu w JS"
-id: "18"
+id: 18
 ---
 
 Pętla w `JavaScript` to narzędzie, które pozwala nam wykonywać te same instrukcje wiele razy, aż do spełnienia określonego warunku. 

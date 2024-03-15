@@ -1,10 +1,10 @@
 ---
 title: Start
-id: "0"
-description: "Start"
+id: 0
 ---
 
 Dzisiaj zrobimy **Mini Instagrama** za pomocą języka JavaScript oraz biblioteki React.\
+Możesz podejrzeć jak to będzie wyglądać tutaj: <a href="https://0adk.github.io/photogram/" target="_blank">Photogram</a>.\
 Struktura i wygląd (HTML i CSS) są już gotowe.\
 Naszym zadaniem będzie ożywić go dodając kod JavaScript.
 

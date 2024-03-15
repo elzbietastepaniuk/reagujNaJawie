@@ -1,6 +1,6 @@
 ---
 title: Komponent `CommentSection.js`
-id: "23"
+id: 13
 ---
 
 Przy tworzeniu komponentu z listą komentarzy użyliśmy zahardkodowanej tablicy z komentarzami. Ale nie jest to prawidłowe podejście, ponieważ chcemy mieć zawsze aktualną listę komentarzy.\
@@ -98,7 +98,9 @@ if (!response.ok)
 ```
 
 Kiedy serwer odpowiada poprawnie (`ok:true` lub `status:200`), otrzymujemy odpowiedź w formacie `JSON`.\
-Aby przetworzyć te dane w JavaScript, używamy metody `json()`, która zwraca obietnicę. Aby uzyskać dostęp do przetworzonych danych JSON, musimy poczekać, aż ta obietnica się rozwiąże. Do tego celu używamy słowa kluczowego `await`. Użycie `await` sprawia, że funkcja zawierająca ten kod jest wstrzymywana do czasu rozwiązania obietnicy, co oznacza, że inne instrukcje w funkcji nie będą wykonywane, dopóki dane JSON nie zostaną pobrane i przetworzone.
+Aby przetworzyć te dane w JavaScript, używamy metody `json()`, która zwraca obietnicę.\
+Aby uzyskać dostęp do przetworzonych danych JSON, musimy poczekać, aż ta obietnica się rozwiąże. Do tego celu używamy słowa kluczowego `await`.\
+Użycie `await` sprawia, że funkcja zawierająca ten kod jest wstrzymywana do czasu rozwiązania obietnicy, co oznacza, że inne instrukcje w funkcji nie będą wykonywane, dopóki dane JSON nie zostaną pobrane i przetworzone.
 
 Gdy operacja się powiedzie, wynik parsowania zostanie przypisany do zmiennej `data`. Następnie, możemy użyć tej zmiennej do zaktualizowania stanu komponentu `comments`, wykorzystując funkcję `setComments`, która jest dostępna dzięki hookowi `useState`.\
 Dzięki temu zaktualizujemy listę komentarzy w naszej aplikacji na podstawie danych pobranych z serwera.
@@ -115,7 +117,7 @@ Teraz dodajmy fragment kodu, który definiuje, jak będzie wyglądać renderowan
 W bloku `return ()` tworzymy `div` z klasą `comment-section` - element kontenerowy, który będzie zawierał całą sekcję z komentarzami.
 
 Teraz stwórzmy warunek, który sprawdza, czy wystąpił jakiś błąd podczas pobierania komentarzy.
-Jeśli wystąpiła błąd - zwrócimy komunikat o błędzie, jesli nie wyrenderujemy komentarze pobrane z serwer.
+Jeśli wystąpiła błąd - zwrócimy komunikat o błędzie, jesli nie wyrenderujemy komentarze pobrane z serwera.
 
 Uzyjemy tu <a href="/glossary/operator-trojargumentowy/" target="_blank">operatora trójargumentowego</a>.
 

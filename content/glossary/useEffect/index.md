@@ -1,7 +1,7 @@
 ---
 title: "useEffect"
 description: "hook w React"
-id: "21"
+id: 21
 ---
 
 `useEffect` jest hookiem w React, który pozwala nam wykonywać jakieś akcje w odpowiedzi na zmiany w naszej aplikacji. Możemy go porównać do "reakcji łańcuchowej" - coś się zmienia, a my reagujemy w zależności od tego, co się stało.

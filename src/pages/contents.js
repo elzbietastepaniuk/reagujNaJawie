@@ -1,21 +1,21 @@
-import * as React from 'react'
-import { Link, graphql } from 'gatsby'
+import * as React from "react";
+import { Link, graphql } from "gatsby";
 
-import Layout from '../components/layout'
-import Seo from '../components/seo'
+import Layout from "../components/layout";
+import Seo from "../components/seo";
 
 const Contents = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
+  const posts = data.allMarkdownRemark.nodes;
 
-  const slides = posts.filter((post) => !post.fields.slug.includes('glossary'))
+  const slides = posts.filter((post) => !post.fields.slug.includes("glossary"));
 
   if (slides.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
         <p>Niestety mam bład, zajrzyj tu za chwilę</p>
       </Layout>
-    )
+    );
   }
 
   return (
@@ -28,10 +28,10 @@ const Contents = ({ data, location }) => {
         >
           {slides.length > 0 &&
             slides.map((slide, index) => (
-              <li key={slide.id}>
+              <li key={slide.frontmatter.id}>
                 <Link to={slide.fields.slug} itemProp="url">
                   <h3>
-                    {index} {slide.frontmatter.title || slide.fields.slug}
+                    {index > 0 ? `${index}.` : null} {slide.frontmatter.title}
                   </h3>
                 </Link>
               </li>
@@ -39,12 +39,12 @@ const Contents = ({ data, location }) => {
         </ol>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Contents
+export default Contents;
 
-export const Head = () => <Seo title="Spis treści" />
+export const Head = () => <Seo title="Spis treści" />;
 
 export const pageQuery = graphql`
   {
@@ -67,4 +67,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

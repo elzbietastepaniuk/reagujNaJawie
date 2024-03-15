@@ -1,6 +1,6 @@
 ---
 title: Komponenty React
-id: "20"
+id: 10
 ---
 
 Spróbujmy przyjrzeć się projektowi naszej sekcji z komentarzami.

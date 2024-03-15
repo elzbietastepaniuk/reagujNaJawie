@@ -1,7 +1,7 @@
 ---
 title: "querySelectorAll"
 description: "metoda obiektu document"
-id: "3"
+id: 3
 ---
 
 Metoda `querySelectorAll` jest jedną z metod obiektu `document` służy, która służy do wybierania wszystkich elementów na stronie, które pasują do określonego selektora CSS. Pozwala to na zbieranie wielu elementów na stronie i operowanie nimi w sposób dynamiczny.
