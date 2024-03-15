@@ -1,6 +1,6 @@
 ---
 title: Koniec ?
-id: "26"
+id: "16"
 ---
 
 Niezupełnie, a przynajmniej mamy taką nadzieję, że jest to początek Twojej przygody z `JavaScriptem` i `React.js`.
