@@ -1,6 +1,6 @@
 ---
 title: Komponent `CommentSection.js`
-id: "13"
+id: 13
 ---
 
 Przy tworzeniu komponentu z listą komentarzy użyliśmy zahardkodowanej tablicy z komentarzami. Ale nie jest to prawidłowe podejście, ponieważ chcemy mieć zawsze aktualną listę komentarzy.\

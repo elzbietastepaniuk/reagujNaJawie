@@ -1,7 +1,7 @@
 ---
 title: "argument"
 description: "wartość przekazywana do funkcji"
-id: "6"
+id: 6
 ---
 
 Argument to wartość przekazywana do funkcji, metody lub instrukcji w celu wykonania określonych operacji. Argumenty pozwalają funkcjom na interakcję z danymi, które są im przekazywane podczas wywoływania.

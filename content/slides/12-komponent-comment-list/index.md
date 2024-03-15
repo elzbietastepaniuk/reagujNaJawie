@@ -1,6 +1,6 @@
 ---
 title: Komponent `CommentList.js`
-id: "12"
+id: 12
 ---
 
 

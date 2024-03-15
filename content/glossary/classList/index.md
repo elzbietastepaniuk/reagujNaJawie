@@ -1,7 +1,7 @@
 ---
 title: "classList"
 description: "właściwość obiektu document"
-id: "4"
+id: 4
 ---
 
 Metoda `classList` jest właściwością obiektu `document`, która umożliwia dostęp do listy klas CSS przypisanych do danego elementu. Pozwala to na dynamiczne dodawanie, usuwanie i sprawdzanie klas na elemencie HTML.

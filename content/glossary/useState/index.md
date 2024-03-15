@@ -1,7 +1,7 @@
 ---
 title: "useState"
 description: "hook w React"
-id: "20"
+id: 20
 ---
 
 `useState` to narzędzie (hook - specjalna funkcja, która pozwala „zahaczyć się” w wewnętrzne mechanizmy Reacta), które pomaga komponentom React przechowywać i aktualizować informacje o stanie elementu.

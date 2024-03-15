@@ -27,7 +27,7 @@ const Index = ({ data, location }) => {
           <br />
           Pomożemy Ci stawiać pierwsze kroki w świecie programowania.
           <br /> <br />
-          Pobierz <a href="/photogram.zip">projekt startowy</a> i zaczynamy...
+          Pobierz <b><a href="/photogram.zip">projekt startowy</a></b> i zaczynamy...
         </p>
         {slides.length > 0 && (
           <Link to={slides[0].fields.slug} itemProp="url" className="button">
