@@ -34,7 +34,7 @@ for (let i = 0; i < likeIcons.length; i++) {
 ```
 
 Co się dzieje? Dlaczego 1 nie jest dodawane, a doklejane do poprzedniej wartości? Za tym stoją **typy** zmiennych.
-Odczytane z elementu value jest typu <a href="/glossary/tablica/" target="_blank">String</a>, czyli w uproszczeniu tekst natomiast 1 jest <a href="/glossary/liczba/" target="_blank">liczbą</a>. Aby JavaScript mógł dodać te dwie wartości musimy zamienić value na liczbę, czyli sparsować ją. Można to zrobić bardzo łatwo korzystając z funkcji parseInt(value) lub dodając znak '+' przed zmienną.
+Odczytane z elementu value jest typu <a href="/glossary/tekst/" target="_blank">String</a>, czyli w uproszczeniu tekst natomiast 1 jest <a href="/glossary/liczba/" target="_blank">liczbą</a>. Aby JavaScript mógł dodać te dwie wartości musimy zamienić value na liczbę, czyli sparsować ją. Można to zrobić bardzo łatwo korzystając z funkcji parseInt(value) lub dodając znak '+' przed zmienną.
 
 ```js
 for (let i = 0; i < likeIcons.length; i++) {
