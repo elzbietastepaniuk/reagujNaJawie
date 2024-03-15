@@ -1,7 +1,7 @@
 ---
 title: "tekst"
 description: "typ danych w JS - string"
-id: "10"
+id: 10
 ---
 
 `string` - (łańcuch znaków) - typ danych służący do przechowywania tekstów. Tekst jest zawsze otoczony cudzysłowami np.:

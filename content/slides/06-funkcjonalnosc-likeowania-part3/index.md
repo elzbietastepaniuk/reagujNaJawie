@@ -1,6 +1,6 @@
 ---
 title: Funkcjonalność like'owania part. 3
-id: "06"
+id: 6
 ---
 
 Sprawdźmy czy działa to dla wszystkich ikon w projekcie.

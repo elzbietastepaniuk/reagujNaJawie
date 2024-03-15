@@ -1,6 +1,6 @@
 ---
 title: Symulacja logowania użytkownika
-id: "15"
+id: 15
 ---
 
 Została nam ostatnia rzecz: przy dodawaniu komentarza w komponencie `AddCommentForm. js` w obiekcie `newComment` pola `nickname` oraz `avatar` są puste.\

@@ -1,7 +1,7 @@
 ---
 title: "funkcja"
 description: "blok kodu w JS"
-id: "15"
+id: 15
 ---
 
 W języku JavaScript funkcje są jednym z podstawowych konceptów. Funkcje służą do grupowania zestawu instrukcji, które wykonują określone zadania, i mogą być wywoływane w różnych miejscach w programie.

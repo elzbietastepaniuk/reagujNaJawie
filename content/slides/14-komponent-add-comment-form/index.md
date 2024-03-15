@@ -1,6 +1,6 @@
 ---
 title: Komponent `AddCommentForm.js`
-id: "14"
+id: 14
 ---
 
 Komponent `AddCommentForm.js` służy do dodawania nowych komentarzy.

@@ -31,7 +31,7 @@ const Contents = ({ data, location }) => {
               <li key={slide.id}>
                 <Link to={slide.fields.slug} itemProp="url">
                   <h3>
-                    {index}. {slide.frontmatter.title || slide.fields.slug}
+                    {index > 0 ? `${index}.` : null} {slide.frontmatter.title}
                   </h3>
                 </Link>
               </li>

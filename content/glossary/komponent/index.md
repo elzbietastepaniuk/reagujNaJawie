@@ -1,7 +1,7 @@
 ---
 title: "komponent"
 description: "komponent funkcyjny React"
-id: "19"
+id: 19
 ---
 
 Komponent w React to "część" aplikacji internetowej, która zajmuje się jedną konkretną rzeczą, na przykład wyświetlaniem przycisku, formularza lub całego panelu. To jak kawałek puzzle, który można użyć wielokrotnie, aby zbudować całą stronę internetową.\

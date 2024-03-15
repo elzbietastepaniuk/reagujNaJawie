@@ -1,6 +1,6 @@
 ---
 title: Funkcjonalność like'owania part. 1
-id: "04"
+id: 4
 ---
 
 Pierwszymi krokami w osięgnięciu naszego celu będą:

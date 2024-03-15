@@ -1,6 +1,6 @@
 ---
 title: Funkcjonalność like'owania part. 2
-id: "05"
+id: 5
 ---
 
 Wszystko fajnie, ale jednak się rozmyśliliśmy i chcemy odserduszkować zdjęcie. Aby to osiągnąć wykorzystamy <a href="/glossary/instrukcje-warunkowe/" target="_blank">instrukcję warunkową</a> if...else.
