@@ -1,7 +1,7 @@
 ---
 title: "operator trójargumentowy"
 description: "skrócona forma zapisu instrukcji warunkowej"
-id: "17"
+id: 17
 ---
 
 Operator trójargumentowy, znany również jako operator warunkowy, pozwala na wyrażanie prostych warunków w jednej linii kodu. Jest to skrócona forma zapisu instrukcji warunkowej `if...else`.

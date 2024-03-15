@@ -1,7 +1,7 @@
 ---
 title: "obiekt"
 description: "typ danych w JS - object"
-id: "13"
+id: 13
 ---
 
 `object` to typ danych, który służy do grupowania powiązanych informacji w jednym miejscu. Obiekt składa się z par klucz-wartość, gdzie klucz jest unikalnym identyfikatorem, a wartość może być dowolnym typem danych.

@@ -1,7 +1,7 @@
 ---
 title: "wartość logiczna"
 description: "typ danych w JS - boolean"
-id: "11"
+id: 11
 ---
 
 `boolean` - typ danych, który przyjmuje jedną z dwóch wartości: `true` lub `false`.

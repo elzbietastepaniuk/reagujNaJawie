@@ -30,7 +30,7 @@ const GlossaryIndex = ({ terms }) => {
       <ol style={{ listStyle: `none` }} className="glossary-list">
         {filteredTerms.map((term) => (
           <li key={term.id}>
-            <Link to={term.fields.slug}>
+            <Link to={term.fields.slug} itemProp="url">
               <h3>{term.frontmatter.title}</h3>
             </Link>
             <p>{term.frontmatter.description}</p>

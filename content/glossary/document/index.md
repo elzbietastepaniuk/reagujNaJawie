@@ -1,7 +1,7 @@
 ---
 title: "document"
 description: "obiekt document"
-id: "1"
+id: 1
 ---
 
 Obiekt `document` jest jednym z obiektów dostępnych w środowisku przeglądarki w JavaScript. Reprezentuje on całą stronę lub dokument HTML, nad którym aktualnie działa skrypt JavaScript.

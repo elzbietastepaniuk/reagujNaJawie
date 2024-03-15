@@ -1,6 +1,6 @@
 ---
 title: Funkcjonalność like'owania part. 5
-id: "08"
+id: 8
 ---
 
 Tak powinna wyglądać zmienna:

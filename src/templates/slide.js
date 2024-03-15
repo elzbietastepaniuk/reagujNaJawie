@@ -12,14 +12,6 @@ const SlideTemplate = ({
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Link
-        to="/contents"
-        title="Spis treści"
-        target="_blank"
-        className="contents-link"
-      >
-        Spis treści
-      </Link>
       <article className="slide" itemScope itemType="http://schema.org/Article">
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>

@@ -1,7 +1,6 @@
 ---
 title: Start
-id: "0"
-description: "Start"
+id: 0
 ---
 
 Dzisiaj zrobimy **Mini Instagrama** za pomocą języka JavaScript oraz biblioteki React.\

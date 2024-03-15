@@ -1,6 +1,6 @@
 ---
 title: JavaScript i React
-id: "01"
+id: 1
 ---
 
 `JavaScript` jest niezwykle wszechstronnym językiem programowania, który odgrywa kluczową rolę w tworzeniu interaktywnych i dynamicznych aplikacji internetowych. W połączeniu z bibliotekami i frameworkami, takimi jak `React`, `JavaScript` staje się potężnym narzędziem do budowania nowoczesnych interfejsów użytkownika.

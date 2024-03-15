@@ -1,6 +1,6 @@
 ---
 title: Funkcjonalność like'owania part. 6
-id: "09"
+id: 9
 ---
 
 Funkcjonalność działa, ale poznajmy i przećwiczmy jeszcze jeden bardzo ważny element JavaScriptu, który będzie niezbędny w dalszym tworzeniu naszej aplikacji z wykorzystaniem biblioteki **React**. Są to <a href="/glossary/funkcje/" target="_blank">Funkcje</a>.

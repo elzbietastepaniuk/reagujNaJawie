@@ -1,7 +1,7 @@
 ---
 title: "operatory"
 description: "arytmetyczne, przypisania, porównania, logiczne"
-id: "8"
+id: 8
 ---
 
 `Operatory` są to symbole lub znaki, które pozwalają nam wykonywać różne operacje na zmiennych. W języku JavaScript możemy podzielić operatory na kilka kategorii, takich jak: operatory arytmetyczne, operatory przypisania, operatory porównania, operatory logiczne.

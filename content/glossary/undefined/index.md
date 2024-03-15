@@ -1,7 +1,7 @@
 ---
 title: "undefined"
 description: "typ danych w JS - undefined"
-id: "14"
+id: 14
 ---
 
 `undefined` typ danych, który oznacza, że zmienna nie została zdefiniowana ani zainicjowana. Jeśli spróbujemy uzyskać dostęp do zmiennej, która nie istnieje, otrzymamy wartość `undefined`.

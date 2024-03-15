@@ -1,7 +1,7 @@
 ---
 title: "addEventListener"
 description: "metoda obiektu"
-id: "5"
+id: 5
 ---
 
 `addEventListener` jest metodą obiektu, która służy do dodawania zdarzeń (eventów) do elementów DOM. Pozwala to na reagowanie na różne akcje użytkownika, takie jak kliknięcie, najechanie myszą, wprowadzenie tekstu itp.

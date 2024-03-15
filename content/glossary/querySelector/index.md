@@ -1,7 +1,7 @@
 ---
 title: "querySelector"
 description: "metoda obiektu document"
-id: "2"
+id: 2
 ---
 
 Metoda `querySelector` obiektu `document` służy do wybierania pierwszego elementu na stronie, który pasuje do określonego selektora CSS. Pozwala ona na dynamiczne manipulowanie elementami strony w oparciu o ich atrybuty, klasy, identyfikatory lub inne właściwości.
