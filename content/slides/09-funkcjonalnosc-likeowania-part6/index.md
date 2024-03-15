@@ -22,7 +22,7 @@ const handleLikesCounter = (number, element, action) => {
   if (action === "add") {
     number = +number + 1;
   } else if (action === "sub") {
-    number = +number - 100000;
+    number = +number - 1;
   }
   element.innerHTML = number;
 };
