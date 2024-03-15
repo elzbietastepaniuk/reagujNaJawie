@@ -65,7 +65,7 @@ const Layout = ({ location, title, children }) => {
   } else {
     header = (
       <div className="global-wrapper" data-is-root-path={isRootPath}>
-        <Link className="header-link-home" to="/">
+        <Link className="header-link-home" to="/" title="Home">
           <StaticImage
             src="../images/hero.webp"
             width={200}
