@@ -18,8 +18,9 @@ const Layout = ({ location, title, children }) => {
       const height = headerElement.getBoundingClientRect().height
       setHeaderHeight(height)
     }
-  }, [])
-
+  }, [headerHeight])
+  
+ 
   if (isRootPath) {
     header = (
       <div className="global-wrapper" data-is-root-path={isRootPath}>
@@ -27,7 +28,7 @@ const Layout = ({ location, title, children }) => {
           <StaticImage
             src="../images/hero.jpg"
             width={550}
-            quality={90}
+            quality={100}
             layout="constrained"
             formats={['auto', 'webp']}
             alt=""
@@ -43,7 +44,7 @@ const Layout = ({ location, title, children }) => {
           <StaticImage
             src="../images/contents.png"
             width={54}
-            quality={54}
+            quality={100}
             layout="constrained"
             formats={['auto', 'webp']}
             alt=""
@@ -54,7 +55,7 @@ const Layout = ({ location, title, children }) => {
           <StaticImage
             src="../images/glossary.png"
             width={54}
-            quality={54}
+            quality={100}
             layout="constrained"
             formats={['auto', 'webp']}
             alt=""
@@ -86,8 +87,8 @@ const Layout = ({ location, title, children }) => {
             {' '}
             <StaticImage
               src="../images/contents.png"
-              width={54}
-              quality={54}
+              width={42}
+              quality={100}
               layout="constrained"
               formats={['auto', 'webp']}
               alt=""
@@ -99,8 +100,8 @@ const Layout = ({ location, title, children }) => {
             {' '}
             <StaticImage
               src="../images/glossary.png"
-              width={54}
-              quality={54}
+              width={42}
+              quality={100}
               layout="constrained"
               formats={['auto', 'webp']}
               alt=""

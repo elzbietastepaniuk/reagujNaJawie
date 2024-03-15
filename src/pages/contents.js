@@ -28,7 +28,7 @@ const Contents = ({ data, location }) => {
         >
           {slides.length > 0 &&
             slides.map((slide, index) => (
-              <li key={slide.id}>
+              <li key={slide.frontmatter.id}>
                 <Link to={slide.fields.slug} itemProp="url">
                   <h3>
                     {index > 0 ? `${index}.` : null} {slide.frontmatter.title}
