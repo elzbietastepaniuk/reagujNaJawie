@@ -13,7 +13,7 @@ Naszym zadaniem będzie ożywić go dodając kod JavaScript.
 - przeglądarka internetowa - polecamy Chrome
 - narzędzia programisty - bez nich ani rusz! Naciśnij F12 (Ctrl + Option + I na Macbookach), żeby je otworzyć.
 - edytor kodu - polecamy Visual Studio Code
-- Node.js - w wersji `18.19.1` - <a href="https://nodejs.org/download/release/v18.19.1/" target="_blank">https://nodejs.org/download/release/v18.19.1/</a>
+- Node.js - w ostatniej polecanej wersji - <a href="https://nodejs.org/en" target="_blank">https://nodejs.org/en</a>
 
 ## Instalacja projektu
 
