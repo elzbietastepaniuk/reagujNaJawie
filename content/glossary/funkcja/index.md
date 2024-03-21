@@ -8,7 +8,7 @@ W języku JavaScript funkcje są jednym z podstawowych konceptów. Funkcje słu�
 
 ## Deklaracja funkcji
 
-Funkcje w JavaScript mogą być deklarowane na kilka różnych sposobów. Najczęstszym z nich jest deklaracja za pomocą słowa kluczowego function:
+Funkcje w JavaScript mogą być deklarowane na kilka różnych sposobów. Najczęstszym z nich jest deklaracja za pomocą słowa kluczowego `function`:
 
 ```js
 function greet(name) {
@@ -34,6 +34,12 @@ W JavaScript wprowadzono strzałkowe funkcje, które są krótszym sposobem defi
 const greet = (name) => {
   return "Hello, " + name + "!";
 };
+```
+
+Funkcje strzałkowe, gdy składają się z pojedynczego wyrażenia, mogą pominąć słowo kluczowe `return`. W takim przypadku wartość zwracana jest domyślnie:
+
+```js
+const greet = (name) => "Hello, " + name + "!";
 ```
 
 ## Wywoływanie funkcji
@@ -64,7 +70,7 @@ Przykładem jest funkcja `hello`, która przyjmuje imię jako parametr i wypisuj
 
 ```js
 function hello(name) {
-  console.log("Hello, " + imie + "!");
+  console.log("Hello, " + name + "!");
 }
 ```
 
@@ -78,7 +84,7 @@ hello("Mark"); // Wynik: Hello, Mark!
 
 ## Zwracanie wartości
 
-Funkcje mogą zwracać wartości za pomocą instrukcji return, które przekazują wynik działania funkcji do miejsca, z którego została wywołana:
+Funkcje mogą zwracać wartości za pomocą instrukcji `return`, które przekazują wynik działania funkcji do miejsca, z którego została wywołana:
 
 ```js
 function multiply(a, b) {
