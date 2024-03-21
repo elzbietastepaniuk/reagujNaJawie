@@ -5,7 +5,7 @@ id: 16
 
 Niezupełnie, a przynajmniej mamy taką nadzieję, że jest to początek Twojej przygody z `JavaScriptem` i `React.js`.
 
-Pobierz **<a href='/photogram.zip'>skończony projekt</a>**, w którym zamieściliśmy komentarze, abyś mógł/mogła przeanalizować kod jeszcze raz i zrozumieć, jak wszystko działa.
+Pobierz **<a href='/photogram-finished.zip'>skończony projekt</a>**, w którym zamieściliśmy komentarze, abyś mógł/mogła przeanalizować kod jeszcze raz i zrozumieć, jak wszystko działa.
 
 Może spróbuj napisać ten kod jeszcze raz samodzielnie?
 
