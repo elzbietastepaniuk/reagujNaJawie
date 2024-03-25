@@ -42,12 +42,12 @@ const commentsElements = comments.map((comment) => (
     <img className="avatar" src={comment.avatarSrc} alt={comment.nickname} />
     <div className="comment-content">
       <p className="nickname">{comment.nickname}</p>
-      <p>{(comment, content)}</p>
+      <p>{(comment.content)}</p>
     </div>
   </li>
 ));
 
-console.log(commentsElements)
+ console.log(commentsElements)
   // Konsola zwróci nam wynik nowej tablicy
   [
   ((
